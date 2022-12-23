@@ -1,0 +1,7 @@
+name "draymath_tests"
+description "tests"
+authors "Doigt"
+license "unlicense"
+dependency "raylib-d" version="~>4.0.0"
+libs "raylib"
+lflags "-L./lib"
