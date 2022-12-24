@@ -1,4 +1,4 @@
-module text_cases;
+module test_cases;
 import std.random;
 
 enum testQty = 500;
