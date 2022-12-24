@@ -10,9 +10,9 @@ abstract class TestCase
 
 class TestCaseFFFF : TestCase
 {
-    private float delegate(float, float, float) rmf, dmf;
+    private float function(float, float, float) rmf, dmf;
     
-    this(float delegate(float, float, float) rmf, float delegate(float, float, float) dmf)
+    this(float function(float, float, float) rmf, float function(float, float, float) dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
