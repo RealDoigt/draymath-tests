@@ -1,5 +1,5 @@
-import raylib;
 import raymath;
+import draymath;
 
 void main()
 {
