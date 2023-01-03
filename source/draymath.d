@@ -167,7 +167,7 @@ struct float16
 //----------------------------------------------------------------------------------
 
 // Clamp float value
-float Clamp(float value, float min, float max)
+float dClamp(float value, float min, float max)
 {
     float result = value < min ? min : value;
 
@@ -177,7 +177,7 @@ float Clamp(float value, float min, float max)
 }
 
 // Calculate linear interpolation between two floats
-float Lerp(float start, float end, float amount)
+float dLerp(float start, float end, float amount)
 {
     float result = start + amount * (end - start);
 
@@ -185,7 +185,7 @@ float Lerp(float start, float end, float amount)
 }
 
 // Normalize input value within input range
-float Normalize(float value, float start, float end)
+float dNormalize(float value, float start, float end)
 {
     float result = (value - start) / (end - start);
 
@@ -193,7 +193,7 @@ float Normalize(float value, float start, float end)
 }
 
 // Remap input value within input range to output range
-float Remap(float value, float inputStart, float inputEnd, float outputStart, float outputEnd)
+float dRemap(float value, float inputStart, float inputEnd, float outputStart, float outputEnd)
 {
     float result = (value - inputStart) / (inputEnd - inputStart) * (outputEnd - outputStart) + outputStart;
 
@@ -205,19 +205,19 @@ float Remap(float value, float inputStart, float inputEnd, float outputStart, fl
 //----------------------------------------------------------------------------------
 
 // Vector with components value 0.0f
-Vector2 Vector2Zero()
+Vector2 dVector2Zero()
 {
     return Vector2(0, 0);
 }
 
 // Vector with components value 1.0f
-Vector2 Vector2One()
+Vector2 dVector2One()
 {
     return Vector2(1, 1);
 }
 
 // Add two vectors (v1 + v2)
-Vector2 Vector2Add(Vector2 v1, Vector2 v2)
+Vector2 dVector2Add(Vector2 v1, Vector2 v2)
 {
     Vector2 result = { v1.x + v2.x, v1.y + v2.y };
 
@@ -225,7 +225,7 @@ Vector2 Vector2Add(Vector2 v1, Vector2 v2)
 }
 
 // Add vector and float value
-Vector2 Vector2AddValue(Vector2 v, float add)
+Vector2 dVector2AddValue(Vector2 v, float add)
 {
     Vector2 result = { v.x + add, v.y + add };
 
@@ -233,7 +233,7 @@ Vector2 Vector2AddValue(Vector2 v, float add)
 }
 
 // Subtract two vectors (v1 - v2)
-Vector2 Vector2Subtract(Vector2 v1, Vector2 v2)
+Vector2 dVector2Subtract(Vector2 v1, Vector2 v2)
 {
     Vector2 result = { v1.x - v2.x, v1.y - v2.y };
 
@@ -241,7 +241,7 @@ Vector2 Vector2Subtract(Vector2 v1, Vector2 v2)
 }
 
 // Subtract vector by float value
-Vector2 Vector2SubtractValue(Vector2 v, float sub)
+Vector2 dVector2SubtractValue(Vector2 v, float sub)
 {
     Vector2 result = { v.x - sub, v.y - sub };
 
@@ -249,7 +249,7 @@ Vector2 Vector2SubtractValue(Vector2 v, float sub)
 }
 
 // Calculate vector length
-float Vector2Length(Vector2 v)
+float dVector2Length(Vector2 v)
 {
     float result = sqrtf(v.x * v.x + v.y * v.y);
 
@@ -257,7 +257,7 @@ float Vector2Length(Vector2 v)
 }
 
 // Calculate vector square length
-float Vector2LengthSqr(Vector2 v)
+float dVector2LengthSqr(Vector2 v)
 {
     float result = v.x * v.x + v.y * v.y;
 
@@ -265,7 +265,7 @@ float Vector2LengthSqr(Vector2 v)
 }
 
 // Calculate two vectors dot product
-float Vector2DotProduct(Vector2 v1, Vector2 v2)
+float dVector2DotProduct(Vector2 v1, Vector2 v2)
 {
     float result = v1.x * v2.x + v1.y * v2.y;
 
@@ -273,7 +273,7 @@ float Vector2DotProduct(Vector2 v1, Vector2 v2)
 }
 
 // Calculate distance between two vectors
-float Vector2Distance(Vector2 v1, Vector2 v2)
+float dVector2Distance(Vector2 v1, Vector2 v2)
 {
     float result = sqrtf((v1.x - v2.x) * (v1.x - v2.x) + (v1.y - v2.y) * (v1.y - v2.y));
 
@@ -281,7 +281,7 @@ float Vector2Distance(Vector2 v1, Vector2 v2)
 }
 
 // Calculate angle from two vectors in X-axis
-float Vector2Angle(Vector2 v1, Vector2 v2)
+float dVector2Angle(Vector2 v1, Vector2 v2)
 {
     float result = atan2f(v2.y - v1.y, v2.x - v1.x) * (180.0f / PI);
 
@@ -291,7 +291,7 @@ float Vector2Angle(Vector2 v1, Vector2 v2)
 }
 
 // Scale vector (multiply by value)
-Vector2 Vector2Scale(Vector2 v, float scale)
+Vector2 dVector2Scale(Vector2 v, float scale)
 {
     Vector2 result = { v.x * scale, v.y * scale };
 
@@ -299,7 +299,7 @@ Vector2 Vector2Scale(Vector2 v, float scale)
 }
 
 // Multiply vector by vector
-Vector2 Vector2Multiply(Vector2 v1, Vector2 v2)
+Vector2 dVector2Multiply(Vector2 v1, Vector2 v2)
 {
     Vector2 result = { v1.x * v2.x, v1.y * v2.y };
 
@@ -307,7 +307,7 @@ Vector2 Vector2Multiply(Vector2 v1, Vector2 v2)
 }
 
 // Negate vector
-Vector2 Vector2Negate(Vector2 v)
+Vector2 dVector2Negate(Vector2 v)
 {
     Vector2 result = { -v.x, -v.y };
 
@@ -315,7 +315,7 @@ Vector2 Vector2Negate(Vector2 v)
 }
 
 // Divide vector by vector
-Vector2 Vector2Divide(Vector2 v1, Vector2 v2)
+Vector2 dVector2Divide(Vector2 v1, Vector2 v2)
 {
     Vector2 result = { v1.x / v2.x, v1.y / v2.y };
 
@@ -323,7 +323,7 @@ Vector2 Vector2Divide(Vector2 v1, Vector2 v2)
 }
 
 // Normalize provided vector
-Vector2 Vector2Normalize(Vector2 v)
+Vector2 dVector2Normalize(Vector2 v)
 {
     auto result = Vector2(0, 0);
     float length = sqrtf(v.x * v.x + v.y * v.y);
@@ -338,7 +338,7 @@ Vector2 Vector2Normalize(Vector2 v)
 }
 
 // Calculate linear interpolation between two vectors
-Vector2 Vector2Lerp(Vector2 v1, Vector2 v2, float amount)
+Vector2 dVector2Lerp(Vector2 v1, Vector2 v2, float amount)
 {
     auto result = Vector2(0, 0);
 
@@ -351,7 +351,7 @@ Vector2 Vector2Lerp(Vector2 v1, Vector2 v2, float amount)
 // Calculate reflected vector to normal
 
 // Dot product
-Vector2 Vector2Reflect(Vector2 v, Vector2 normal)
+Vector2 dVector2Reflect(Vector2 v, Vector2 normal)
 {
     auto result = Vector2(0, 0);
 
@@ -364,7 +364,7 @@ Vector2 Vector2Reflect(Vector2 v, Vector2 normal)
 }
 
 // Rotate vector by angle
-Vector2 Vector2Rotate(Vector2 v, float angle)
+Vector2 dVector2Rotate(Vector2 v, float angle)
 {
     auto result = Vector2(0, 0);
 
@@ -375,7 +375,7 @@ Vector2 Vector2Rotate(Vector2 v, float angle)
 }
 
 // Move Vector towards target
-Vector2 Vector2MoveTowards(Vector2 v, Vector2 target, float maxDistance)
+Vector2 dVector2MoveTowards(Vector2 v, Vector2 target, float maxDistance)
 {
     auto result = Vector2(0, 0);
 
@@ -398,7 +398,7 @@ Vector2 Vector2MoveTowards(Vector2 v, Vector2 target, float maxDistance)
 //----------------------------------------------------------------------------------
 
 // Vector with components value 0.0f
-Vector3 Vector3Zero()
+Vector3 dVector3Zero()
 {
     Vector3 result = { 0.0f, 0.0f, 0.0f };
 
@@ -406,7 +406,7 @@ Vector3 Vector3Zero()
 }
 
 // Vector with components value 1.0f
-Vector3 Vector3One()
+Vector3 dVector3One()
 {
     Vector3 result = { 1.0f, 1.0f, 1.0f };
 
@@ -414,7 +414,7 @@ Vector3 Vector3One()
 }
 
 // Add two vectors
-Vector3 Vector3Add(Vector3 v1, Vector3 v2)
+Vector3 dVector3Add(Vector3 v1, Vector3 v2)
 {
     Vector3 result = { v1.x + v2.x, v1.y + v2.y, v1.z + v2.z };
 
@@ -422,7 +422,7 @@ Vector3 Vector3Add(Vector3 v1, Vector3 v2)
 }
 
 // Add vector and float value
-Vector3 Vector3AddValue(Vector3 v, float add)
+Vector3 dVector3AddValue(Vector3 v, float add)
 {
     Vector3 result = { v.x + add, v.y + add, v.z + add };
 
@@ -430,7 +430,7 @@ Vector3 Vector3AddValue(Vector3 v, float add)
 }
 
 // Subtract two vectors
-Vector3 Vector3Subtract(Vector3 v1, Vector3 v2)
+Vector3 dVector3Subtract(Vector3 v1, Vector3 v2)
 {
     Vector3 result = { v1.x - v2.x, v1.y - v2.y, v1.z - v2.z };
 
@@ -438,7 +438,7 @@ Vector3 Vector3Subtract(Vector3 v1, Vector3 v2)
 }
 
 // Subtract vector by float value
-Vector3 Vector3SubtractValue(Vector3 v, float sub)
+Vector3 dVector3SubtractValue(Vector3 v, float sub)
 {
     Vector3 result = { v.x - sub, v.y - sub, v.z - sub };
 
@@ -446,7 +446,7 @@ Vector3 Vector3SubtractValue(Vector3 v, float sub)
 }
 
 // Multiply vector by scalar
-Vector3 Vector3Scale(Vector3 v, float scalar)
+Vector3 dVector3Scale(Vector3 v, float scalar)
 {
     Vector3 result = { v.x * scalar, v.y * scalar, v.z * scalar };
 
@@ -454,7 +454,7 @@ Vector3 Vector3Scale(Vector3 v, float scalar)
 }
 
 // Multiply vector by vector
-Vector3 Vector3Multiply(Vector3 v1, Vector3 v2)
+Vector3 dVector3Multiply(Vector3 v1, Vector3 v2)
 {
     Vector3 result = { v1.x * v2.x, v1.y * v2.y, v1.z * v2.z };
 
@@ -462,7 +462,7 @@ Vector3 Vector3Multiply(Vector3 v1, Vector3 v2)
 }
 
 // Calculate two vectors cross product
-Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2)
+Vector3 dVector3CrossProduct(Vector3 v1, Vector3 v2)
 {
     Vector3 result = { v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x };
 
@@ -471,7 +471,7 @@ Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2)
 // Calculate one vector perpendicular vector
 
 // Cross product between vectors
-Vector3 Vector3Perpendicular(Vector3 v)
+Vector3 dVector3Perpendicular(Vector3 v)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -500,7 +500,7 @@ Vector3 Vector3Perpendicular(Vector3 v)
 }
 
 // Calculate vector length
-float Vector3Length(const Vector3 v)
+float dVector3Length(const Vector3 v)
 {
     float result = sqrtf(v.x * v.x + v.y * v.y + v.z * v.z);
 
@@ -508,7 +508,7 @@ float Vector3Length(const Vector3 v)
 }
 
 // Calculate vector square length
-float Vector3LengthSqr(const Vector3 v)
+float dVector3LengthSqr(const Vector3 v)
 {
     float result = v.x * v.x + v.y * v.y + v.z * v.z;
 
@@ -516,7 +516,7 @@ float Vector3LengthSqr(const Vector3 v)
 }
 
 // Calculate two vectors dot product
-float Vector3DotProduct(Vector3 v1, Vector3 v2)
+float dVector3DotProduct(Vector3 v1, Vector3 v2)
 {
     float result = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z;
 
@@ -524,7 +524,7 @@ float Vector3DotProduct(Vector3 v1, Vector3 v2)
 }
 
 // Calculate distance between two vectors
-float Vector3Distance(Vector3 v1, Vector3 v2)
+float dVector3Distance(Vector3 v1, Vector3 v2)
 {
     float result = 0.0f;
 
@@ -540,7 +540,7 @@ float Vector3Distance(Vector3 v1, Vector3 v2)
 
 // Angle in XZ
 // Angle in XY
-Vector2 Vector3Angle(Vector3 v1, Vector3 v2)
+Vector2 dVector3Angle(Vector3 v1, Vector3 v2)
 {
     auto result = Vector2(0, 0);
 
@@ -554,7 +554,7 @@ Vector2 Vector3Angle(Vector3 v1, Vector3 v2)
     return result;
 }
 // Negate provided vector (invert direction)
-Vector3 Vector3Negate(Vector3 v)
+Vector3 dVector3Negate(Vector3 v)
 {
     Vector3 result = { -v.x, -v.y, -v.z };
 
@@ -562,7 +562,7 @@ Vector3 Vector3Negate(Vector3 v)
 }
 
 // Divide vector by vector
-Vector3 Vector3Divide(Vector3 v1, Vector3 v2)
+Vector3 dVector3Divide(Vector3 v1, Vector3 v2)
 {
     Vector3 result = { v1.x / v2.x, v1.y / v2.y, v1.z / v2.z };
 
@@ -570,7 +570,7 @@ Vector3 Vector3Divide(Vector3 v1, Vector3 v2)
 }
 
 // Normalize provided vector
-Vector3 Vector3Normalize(Vector3 v)
+Vector3 dVector3Normalize(Vector3 v)
 {
     Vector3 result = v;
 
@@ -595,7 +595,7 @@ Vector3 Vector3Normalize(Vector3 v)
 // Vector3Normalize(vn1);
 
 // Vector3CrossProduct(vn1, *v1)
-void Vector3OrthoNormalize(Vector3* v1, Vector3* v2)
+void dVector3OrthoNormalize(Vector3* v1, Vector3* v2)
 {
     float length = 0.0f;
     float ilength = 0.0f;
@@ -628,7 +628,7 @@ void Vector3OrthoNormalize(Vector3* v1, Vector3* v2)
 }
 
 // Transforms a Vector3 by a given Matrix
-Vector3 Vector3Transform(Vector3 v, Matrix mat)
+Vector3 dVector3Transform(Vector3 v, Matrix mat)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -644,7 +644,7 @@ Vector3 Vector3Transform(Vector3 v, Matrix mat)
 }
 
 // Transform a vector by quaternion rotation
-Vector3 Vector3RotateByQuaternion(Vector3 v, Quaternion q)
+Vector3 dVector3RotateByQuaternion(Vector3 v, Quaternion q)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -656,7 +656,7 @@ Vector3 Vector3RotateByQuaternion(Vector3 v, Quaternion q)
 }
 
 // Calculate linear interpolation between two vectors
-Vector3 Vector3Lerp(Vector3 v1, Vector3 v2, float amount)
+Vector3 dVector3Lerp(Vector3 v1, Vector3 v2, float amount)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -671,7 +671,7 @@ Vector3 Vector3Lerp(Vector3 v1, Vector3 v2, float amount)
 // I is the original vector
 // N is the normal of the incident plane
 // R = I - (2*N*(DotProduct[I, N]))
-Vector3 Vector3Reflect(Vector3 v, Vector3 normal)
+Vector3 dVector3Reflect(Vector3 v, Vector3 normal)
 {
    auto result = Vector3(0, 0, 0);
 
@@ -689,7 +689,7 @@ Vector3 Vector3Reflect(Vector3 v, Vector3 normal)
 }
 
 // Get min value for each pair of components
-Vector3 Vector3Min(Vector3 v1, Vector3 v2)
+Vector3 dVector3Min(Vector3 v1, Vector3 v2)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -701,7 +701,7 @@ Vector3 Vector3Min(Vector3 v1, Vector3 v2)
 }
 
 // Get max value for each pair of components
-Vector3 Vector3Max(Vector3 v1, Vector3 v2)
+Vector3 dVector3Max(Vector3 v1, Vector3 v2)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -722,7 +722,7 @@ Vector3 Vector3Max(Vector3 v1, Vector3 v2)
 // Vector3DotProduct(v1, v1)
 // Vector3DotProduct(v2, v0)
 // Vector3DotProduct(v2, v1)
-Vector3 Vector3Barycenter(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
+Vector3 dVector3Barycenter(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -768,7 +768,7 @@ Vector3 Vector3Barycenter(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
 // QuaternionTransform(quat, matViewProjInv)
 
 // Normalized world points in vectors
-Vector3 Vector3Unproject(Vector3 source, Matrix projection, Matrix view)
+Vector3 dVector3Unproject(Vector3 source, Matrix projection, Matrix view)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -851,7 +851,7 @@ Vector3 Vector3Unproject(Vector3 source, Matrix projection, Matrix view)
 }
 
 // Get Vector3 as float array
-float3 Vector3ToFloatV(Vector3 v)
+float3 dVector3ToFloatV(Vector3 v)
 {
     float3 buffer;
 
@@ -868,7 +868,7 @@ float3 Vector3ToFloatV(Vector3 v)
 // Compute matrix determinant
 
 // Cache the matrix values (speed optimization)
-float MatrixDeterminant(Matrix mat)
+float dMatrixDeterminant(Matrix mat)
 {
     float result = 0.0f;
 
@@ -888,14 +888,14 @@ float MatrixDeterminant(Matrix mat)
     return result;
 }
 // Get the trace of the matrix (sum of the values along the diagonal)
-float MatrixTrace(Matrix mat)
+float dMatrixTrace(Matrix mat)
 {
     float result = mat.m0 + mat.m5 + mat.m10 + mat.m15;
 
     return result;
 }
 // Transposes provided matrix
-Matrix MatrixTranspose(Matrix mat)
+Matrix dMatrixTranspose(Matrix mat)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -923,7 +923,7 @@ Matrix MatrixTranspose(Matrix mat)
 // Cache the matrix values (speed optimization)
 
 // Calculate the invert determinant (inlined to avoid double-caching)
-Matrix MatrixInvert(Matrix mat)
+Matrix dMatrixInvert(Matrix mat)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -973,7 +973,7 @@ Matrix MatrixInvert(Matrix mat)
 // Cache the matrix values (speed optimization)
 
 // MatrixDeterminant(mat)
-Matrix MatrixNormalize(Matrix mat)
+Matrix dMatrixNormalize(Matrix mat)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1011,7 +1011,7 @@ Matrix MatrixNormalize(Matrix mat)
     return result;
 }
 // Get identity matrix
-Matrix MatrixIdentity()
+Matrix dMatrixIdentity()
 {
     Matrix result = { 1.0f, 0.0f, 0.0f, 0.0f,
                       0.0f, 1.0f, 0.0f, 0.0f,
@@ -1022,7 +1022,7 @@ Matrix MatrixIdentity()
 }
 
 // Add two matrices
-Matrix MatrixAdd(Matrix left, Matrix right)
+Matrix dMatrixAdd(Matrix left, Matrix right)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1046,7 +1046,7 @@ Matrix MatrixAdd(Matrix left, Matrix right)
     return result;
 }
 // Subtract two matrices (left - right)
-Matrix MatrixSubtract(Matrix left, Matrix right)
+Matrix dMatrixSubtract(Matrix left, Matrix right)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1071,7 +1071,7 @@ Matrix MatrixSubtract(Matrix left, Matrix right)
 }
 // Get two matrix multiplication
 // NOTE: When multiplying matrices... the order matters!
-Matrix MatrixMultiply(Matrix left, Matrix right)
+Matrix dMatrixMultiply(Matrix left, Matrix right)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1095,7 +1095,7 @@ Matrix MatrixMultiply(Matrix left, Matrix right)
     return result;
 }
 // Get translation matrix
-Matrix MatrixTranslate(float x, float y, float z)
+Matrix dMatrixTranslate(float x, float y, float z)
 {
     Matrix result = { 1.0f, 0.0f, 0.0f, x,
                       0.0f, 1.0f, 0.0f, y,
@@ -1106,7 +1106,7 @@ Matrix MatrixTranslate(float x, float y, float z)
 }
 // Create rotation matrix from axis and angle
 // NOTE: Angle should be provided in radians
-Matrix MatrixRotate(Vector3 axis, float angle)
+Matrix dMatrixRotate(Vector3 axis, float angle)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1151,7 +1151,7 @@ Matrix MatrixRotate(Vector3 axis, float angle)
 // Get x-rotation matrix (angle in radians)
 
 // MatrixIdentity()
-Matrix MatrixRotateX(float angle)
+Matrix dMatrixRotateX(float angle)
 {
     Matrix result = { 1.0f, 0.0f, 0.0f, 0.0f,
                       0.0f, 1.0f, 0.0f, 0.0f,
@@ -1171,7 +1171,7 @@ Matrix MatrixRotateX(float angle)
 // Get y-rotation matrix (angle in radians)
 
 // MatrixIdentity()
-Matrix MatrixRotateY(float angle)
+Matrix dMatrixRotateY(float angle)
 {
     Matrix result = { 1.0f, 0.0f, 0.0f, 0.0f,
                       0.0f, 1.0f, 0.0f, 0.0f,
@@ -1191,7 +1191,7 @@ Matrix MatrixRotateY(float angle)
 // Get z-rotation matrix (angle in radians)
 
 // MatrixIdentity()
-Matrix MatrixRotateZ(float angle)
+Matrix dMatrixRotateZ(float angle)
 {
     Matrix result = { 1.0f, 0.0f, 0.0f, 0.0f,
                       0.0f, 1.0f, 0.0f, 0.0f,
@@ -1211,7 +1211,7 @@ Matrix MatrixRotateZ(float angle)
 // Get xyz-rotation matrix (angles in radians)
 
 // MatrixIdentity()
-Matrix MatrixRotateXYZ(Vector3 ang)
+Matrix dMatrixRotateXYZ(Vector3 ang)
 {
     Matrix result = { 1.0f, 0.0f, 0.0f, 0.0f,
                       0.0f, 1.0f, 0.0f, 0.0f,
@@ -1240,7 +1240,7 @@ Matrix MatrixRotateXYZ(Vector3 ang)
     return result;
 }
 // Get zyx-rotation matrix (angles in radians)
-Matrix MatrixRotateZYX(Vector3 ang)
+Matrix dMatrixRotateZYX(Vector3 ang)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1274,7 +1274,7 @@ Matrix MatrixRotateZYX(Vector3 ang)
     return result;
 }
 // Get scaling matrix
-Matrix MatrixScale(float x, float y, float z)
+Matrix dMatrixScale(float x, float y, float z)
 {
     Matrix result = { x, 0.0f, 0.0f, 0.0f,
                       0.0f, y, 0.0f, 0.0f,
@@ -1284,7 +1284,7 @@ Matrix MatrixScale(float x, float y, float z)
     return result;
 }
 // Get perspective projection matrix
-Matrix MatrixFrustum(
+Matrix dMatrixFrustum(
     double left,
     double right,
     double bottom,
@@ -1324,7 +1324,7 @@ Matrix MatrixFrustum(
 // NOTE: Angle should be provided in radians
 
 // MatrixFrustum(-right, right, -top, top, near, far);
-Matrix MatrixPerspective(double fovy, double aspect, double near, double far)
+Matrix dMatrixPerspective(double fovy, double aspect, double near, double far)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1350,7 +1350,7 @@ Matrix MatrixPerspective(double fovy, double aspect, double near, double far)
     return result;
 }
 // Get orthographic projection matrix
-Matrix MatrixOrtho(
+Matrix dMatrixOrtho(
     double left,
     double right,
     double bottom,
@@ -1398,7 +1398,7 @@ Matrix MatrixOrtho(
 // Vector3DotProduct(vx, eye)
 // Vector3DotProduct(vy, eye)
 // Vector3DotProduct(vz, eye)
-Matrix MatrixLookAt(Vector3 eye, Vector3 target, Vector3 up)
+Matrix dMatrixLookAt(Vector3 eye, Vector3 target, Vector3 up)
 {
     auto result = Matrix(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -1452,7 +1452,7 @@ Matrix MatrixLookAt(Vector3 eye, Vector3 target, Vector3 up)
     return result;
 }
 // Get float array of matrix data
-float16 MatrixToFloatV(Matrix mat)
+float16 dMatrixToFloatV(Matrix mat)
 {
     float16 result;
 
@@ -1480,7 +1480,7 @@ float16 MatrixToFloatV(Matrix mat)
 //----------------------------------------------------------------------------------
 
 // Add two quaternions
-Quaternion QuaternionAdd(Quaternion q1, Quaternion q2)
+Quaternion dQuaternionAdd(Quaternion q1, Quaternion q2)
 {
     Quaternion result = {q1.x + q2.x, q1.y + q2.y, q1.z + q2.z, q1.w + q2.w};
 
@@ -1488,7 +1488,7 @@ Quaternion QuaternionAdd(Quaternion q1, Quaternion q2)
 }
 
 // Add quaternion and float value
-Quaternion QuaternionAddValue(Quaternion q, float add)
+Quaternion dQuaternionAddValue(Quaternion q, float add)
 {
     Quaternion result = {q.x + add, q.y + add, q.z + add, q.w + add};
 
@@ -1496,35 +1496,35 @@ Quaternion QuaternionAddValue(Quaternion q, float add)
 }
 
 // Subtract two quaternions
-Quaternion QuaternionSubtract(Quaternion q1, Quaternion q2)
+Quaternion dQuaternionSubtract(Quaternion q1, Quaternion q2)
 {
     Quaternion result = {q1.x - q2.x, q1.y - q2.y, q1.z - q2.z, q1.w - q2.w};
 
     return result;
 }
 // Subtract quaternion and float value
-Quaternion QuaternionSubtractValue(Quaternion q, float sub)
+Quaternion dQuaternionSubtractValue(Quaternion q, float sub)
 {
     Quaternion result = {q.x - sub, q.y - sub, q.z - sub, q.w - sub};
 
     return result;
 }
 // Get identity quaternion
-Quaternion QuaternionIdentity()
+Quaternion dQuaternionIdentity()
 {
     Quaternion result = { 0.0f, 0.0f, 0.0f, 1.0f };
 
     return result;
 }
 // Computes the length of a quaternion
-float QuaternionLength(Quaternion q)
+float dQuaternionLength(Quaternion q)
 {
     float result = sqrtf(q.x * q.x + q.y * q.y + q.z * q.z + q.w * q.w);
 
     return result;
 }
 // Normalize provided quaternion
-Quaternion QuaternionNormalize(Quaternion q)
+Quaternion dQuaternionNormalize(Quaternion q)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1540,7 +1540,7 @@ Quaternion QuaternionNormalize(Quaternion q)
     return result;
 }
 // Invert provided quaternion
-Quaternion QuaternionInvert(Quaternion q)
+Quaternion dQuaternionInvert(Quaternion q)
 {
     Quaternion result = q;
 
@@ -1560,7 +1560,7 @@ Quaternion QuaternionInvert(Quaternion q)
     return result;
 }
 // Calculate two quaternion multiplication
-Quaternion QuaternionMultiply(Quaternion q1, Quaternion q2)
+Quaternion dQuaternionMultiply(Quaternion q1, Quaternion q2)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1575,7 +1575,7 @@ Quaternion QuaternionMultiply(Quaternion q1, Quaternion q2)
     return result;
 }
 // Scale quaternion by float value
-Quaternion QuaternionScale(Quaternion q, float mul)
+Quaternion dQuaternionScale(Quaternion q, float mul)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1589,14 +1589,14 @@ Quaternion QuaternionScale(Quaternion q, float mul)
     return result;
 }
 // Divide two quaternions
-Quaternion QuaternionDivide(Quaternion q1, Quaternion q2)
+Quaternion dQuaternionDivide(Quaternion q1, Quaternion q2)
 {
     Quaternion result = { q1.x / q2.x, q1.y / q2.y, q1.z / q2.z, q1.w / q2.w };
 
     return result;
 }
 // Calculate linear interpolation between two quaternions
-Quaternion QuaternionLerp(Quaternion q1, Quaternion q2, float amount)
+Quaternion dQuaternionLerp(Quaternion q1, Quaternion q2, float amount)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1612,7 +1612,7 @@ Quaternion QuaternionLerp(Quaternion q1, Quaternion q2, float amount)
 // QuaternionLerp(q1, q2, amount)
 
 // QuaternionNormalize(q);
-Quaternion QuaternionNlerp(Quaternion q1, Quaternion q2, float amount)
+Quaternion dQuaternionNlerp(Quaternion q1, Quaternion q2, float amount)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1636,7 +1636,7 @@ Quaternion QuaternionNlerp(Quaternion q1, Quaternion q2, float amount)
     return result;
 }
 // Calculates spherical linear interpolation between two quaternions
-Quaternion QuaternionSlerp(Quaternion q1, Quaternion q2, float amount)
+Quaternion dQuaternionSlerp(Quaternion q1, Quaternion q2, float amount)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1685,7 +1685,7 @@ Quaternion QuaternionSlerp(Quaternion q1, Quaternion q2, float amount)
 
 // QuaternionNormalize(q);
 // NOTE: Normalize to essentially nlerp the original and identity to 0.5
-Quaternion QuaternionFromVector3ToVector3(Vector3 from, Vector3 to)
+Quaternion dQuaternionFromVector3ToVector3(Vector3 from, Vector3 to)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1712,7 +1712,7 @@ Quaternion QuaternionFromVector3ToVector3(Vector3 from, Vector3 to)
     return result;
 }
 // Get a quaternion for a given rotation matrix
-Quaternion QuaternionFromMatrix(Matrix mat)
+Quaternion dQuaternionFromMatrix(Matrix mat)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1749,7 +1749,7 @@ Quaternion QuaternionFromMatrix(Matrix mat)
 // Get a matrix for a given quaternion
 
 // MatrixIdentity()
-Matrix QuaternionToMatrix(Quaternion q)
+Matrix dQuaternionToMatrix(Quaternion q)
 {
     Matrix result = { 1.0f, 0.0f, 0.0f, 0.0f,
                       0.0f, 1.0f, 0.0f, 0.0f,
@@ -1786,7 +1786,7 @@ Matrix QuaternionToMatrix(Quaternion q)
 // Vector3Normalize(axis)
 
 // QuaternionNormalize(q);
-Quaternion QuaternionFromAxisAngle(Vector3 axis, float angle)
+Quaternion dQuaternionFromAxisAngle(Vector3 axis, float angle)
 {
     Quaternion result = { 0.0f, 0.0f, 0.0f, 1.0f };
 
@@ -1835,7 +1835,7 @@ Quaternion QuaternionFromAxisAngle(Vector3 axis, float angle)
 
 // This occurs when the angle is zero.
 // Not a problem: just set an arbitrary normalized axis.
-void QuaternionToAxisAngle(Quaternion q, Vector3* outAxis, float* outAngle)
+void dQuaternionToAxisAngle(Quaternion q, Vector3* outAxis, float* outAngle)
 {
     if (fabs(q.w) > 1.0f)
     {
@@ -1872,7 +1872,7 @@ void QuaternionToAxisAngle(Quaternion q, Vector3* outAxis, float* outAngle)
 }
 // Get the quaternion equivalent to Euler angles
 // NOTE: Rotation order is ZYX
-Quaternion QuaternionFromEuler(float pitch, float yaw, float roll)
+Quaternion dQuaternionFromEuler(float pitch, float yaw, float roll)
 {
     auto result = Vector4(0, 0, 0, 0);
 
@@ -1898,7 +1898,7 @@ Quaternion QuaternionFromEuler(float pitch, float yaw, float roll)
 // Pitch (y-axis rotation)
 
 // Yaw (z-axis rotation)
-Vector3 QuaternionToEuler(Quaternion q)
+Vector3 dQuaternionToEuler(Quaternion q)
 {
     auto result = Vector3(0, 0, 0);
 
@@ -1921,7 +1921,7 @@ Vector3 QuaternionToEuler(Quaternion q)
     return result;
 }
 // Transform a quaternion given a transformation matrix
-Quaternion QuaternionTransform(Quaternion q, Matrix mat)
+Quaternion dQuaternionTransform(Quaternion q, Matrix mat)
 {
     auto result = Vector4(0, 0, 0, 0);
 
