@@ -65,6 +65,8 @@ void main()
     // returns Vector2, 2 Vector2 and 1 float params
     tcs["Vector2Lerp"] = 
     new TestCaseV2V2V2F(cast(Vector2 function(Vector2, Vector2, float))&Vector2Lerp, cast(Vector2 function(Vector2, Vector2, float))&dVector2Lerp);
+    tcs["Vector2MoveTowards"] = 
+    new TestCaseV2V2V2F(cast(Vector2 function(Vector2, Vector2, float))&Vector2MoveTowards, cast(Vector2 function(Vector2, Vector2, float))&dVector2MoveTowards);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
