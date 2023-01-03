@@ -1,5 +1,6 @@
 import raymath;
 import draymath;
+import std.stdio;
 import test_cases;
 
 void main()
