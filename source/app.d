@@ -43,6 +43,9 @@ void main()
     new TestCaseTV2V2(cast(float function(Vector2, Vector2))&Vector2Distance, cast(float function(Vector2, Vector2))&dVector2Distance);
     tcs["Vector2Angle"] = 
     new TestCaseTV2V2(cast(float function(Vector2, Vector2))&Vector2Angle, cast(float function(Vector2, Vector2))&dVector2Angle);
+    // return Vector2, Vector2 and float params
+    tcs["Vector2AddValue"] = 
+    new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2AddValue, cast(Vector2 function(Vector2, float))&dVector2AddValue);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
