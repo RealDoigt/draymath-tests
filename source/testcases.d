@@ -1,5 +1,6 @@
 module test_cases;
 import std.random;
+import raylib;
 
 enum testQty = 500, rangeMax = 10_000f;
 auto r = Random(79_981_964u);
@@ -57,5 +58,21 @@ class TestCaseFFFFF : TestCase
         }
         
         return true;
+    }
+}
+
+class TestCaseV2 : TestCase
+{
+    private Vector2 function() rmf, dmf;
+    
+    this(Vector2 function() rmf, Vector2 function() dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        return rmf() == dmf();
     }
 }
