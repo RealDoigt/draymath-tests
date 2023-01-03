@@ -27,11 +27,10 @@ void main()
     new TestCaseV2(cast(Vector2 function())&Vector2One, cast(Vector2 function())&dVector2One);
     // returns Vector2, 2 Vector2 params
     tcs["Vector2Add"] = 
-    new TestCaseV2V2V2(cast(Vector2 function(Vector2, Vector2))&Vector2Add, cast(Vector2 function(Vector2, Vector2))&dVector2Add);
+    new TestCaseTV2V2(cast(Vector2 function(Vector2, Vector2))&Vector2Add, cast(Vector2 function(Vector2, Vector2))&dVector2Add);
     tcs["Vector2Subtract"] = 
-    new TestCaseV2V2V2(cast(Vector2 function(Vector2, Vector2))&Vector2Subtract, cast(Vector2 function(Vector2, Vector2))&dVector2Subtract);
+    new TestCaseTV2V2(cast(Vector2 function(Vector2, Vector2))&Vector2Subtract, cast(Vector2 function(Vector2, Vector2))&dVector2Subtract);
     // END Function Test Cases
     
-    foreach (key, tc; tcs)
-        "%s: %s".writefln(key, tc.test);
+    foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
 } 
