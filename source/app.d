@@ -30,6 +30,8 @@ void main()
     new TestCaseV2(cast(Vector2 function(Vector2, Vector2))&Vector2Add, cast(Vector2 function(Vector2, Vector2))&dVector2Add);
     tcs["Vector2Subtract"] = 
     new TestCaseV2(cast(Vector2 function(Vector2, Vector2))&Vector2Subtract, cast(Vector2 function(Vector2, Vector2))&dVector2Subtract);
+    tcs["Vector2DotProduct"] = 
+    new TestCaseV2(cast(Vector2 function(Vector2, Vector2))&Vector2DotProduct, cast(Vector2 function(Vector2, Vector2))&dVector2DotProduct);
     // END Function Test Cases
     
     foreach (key, tc; tcs)
