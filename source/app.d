@@ -62,6 +62,9 @@ void main()
     new TestCaseTV2(cast(Vector2 function(Vector2))&Vector2Negate, cast(Vector2 function(Vector2))&dVector2Negate);
     tcs["Vector2Normalize"] = 
     new TestCaseTV2(cast(Vector2 function(Vector2))&Vector2Normalize, cast(Vector2 function(Vector2))&dVector2Normalize);
+    // returns Vector2, 2 Vector2 and 1 float params
+    tcs["Vector2Lerp"] = 
+    new TestCaseV2V2V2F(cast(Vector2 function(Vector2, Vector2, float))&Vector2Lerp, cast(Vector2 function(Vector2, Vector2, float))&dVector2Lerp);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
