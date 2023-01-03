@@ -52,6 +52,9 @@ void main()
     new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2Scale, cast(Vector2 function(Vector2, float))&dVector2Scale);
     tcs["Vector2Rotate"] = 
     new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2Rotate, cast(Vector2 function(Vector2, float))&dVector2Rotate);
+    // return float, Vector2 param
+    tcs["Vector2Length"] = 
+    new TestCaseTV2(cast(float function(Vector2))&Vector2Length, cast(float function(Vector2))&dVector2Length);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
