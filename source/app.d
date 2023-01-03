@@ -6,7 +6,7 @@ void main()
 {
     TestCase[string] tcs;
     
-    tcs["clamp"] = new TestCaseFFFF(&raymath.Clamp, &draymath.Clamp);
+    tcs["clamp"] = new TestCaseFFFF(&cast(float function(float, float, float))raymath.Clamp, &draymath.Clamp);
     
     
 } 
