@@ -16,4 +16,9 @@ void main()
     tcs["Normalize"] = 
     new TestCaseFFFF(cast(float function(float, float, float))&Normalize, cast(float function(float, float, float))&dNormalize);
     // END Function Test Cases
+    
+    foreach (key, tc; tcs)
+    {
+        "%s: %s".writefln(key, tc.test);
+    }
 } 
