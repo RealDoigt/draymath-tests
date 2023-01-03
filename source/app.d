@@ -19,6 +19,9 @@ void main()
     // returns float, 4 float params
     tcs["Remap"] = 
     new TestCaseFFFFF(cast(float function(float, float, float, float))&Remap, cast(float function(float, float, float, float))&dRemap);
+    // returns Vector2, no params
+    tcs["Vector2Zero"] = 
+    new TestCaseFFFFF(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
     // END Function Test Cases
     
     foreach (key, tc; tcs)
