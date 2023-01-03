@@ -9,5 +9,7 @@ void main()
     tcs["clamp"] = 
     new TestCaseFFFF(cast(float function(float, float, float))&Clamp, cast(float function(float, float, float))&dClamp);
     
+    tcs["lerp"] = 
+    new TestCaseFFFF(cast(float function(float, float, float))&Lerp, cast(float function(float, float, float))&dLerp);
     
 } 
