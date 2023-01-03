@@ -2,7 +2,7 @@ module test_cases;
 import std.random;
 
 enum testQty = 500, rangeMax = 10_000f;
-auto r = Random(unpredictableSeed);
+auto r = Random(79_981_964u);
 
 abstract class TestCase
 {
