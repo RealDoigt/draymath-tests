@@ -77,11 +77,11 @@ class TestCaseV2 : TestCase
     }
 }
 
-class TestCaseV2V2V2 : TestCase
+class TestCaseTV2V2(T) : TestCase
 {
-    private Vector2 function(Vector2, Vector2) rmf, dmf;
+    private T function(Vector2, Vector2) rmf, dmf;
     
-    this(Vector2 function(Vector2, Vector2) rmf, Vector2 function(Vector2, Vector2) dmf)
+    this(T function(Vector2, Vector2) rmf, T function(Vector2, Vector2) dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
