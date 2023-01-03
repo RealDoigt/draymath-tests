@@ -43,7 +43,7 @@ void main()
     new TestCaseTV2V2(cast(float function(Vector2, Vector2))&Vector2Distance, cast(float function(Vector2, Vector2))&dVector2Distance);
     tcs["Vector2Angle"] = 
     new TestCaseTV2V2(cast(float function(Vector2, Vector2))&Vector2Angle, cast(float function(Vector2, Vector2))&dVector2Angle);
-    // return Vector2, Vector2 and float params
+    // returns Vector2, Vector2 and float params
     tcs["Vector2AddValue"] = 
     new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2AddValue, cast(Vector2 function(Vector2, float))&dVector2AddValue);
     tcs["Vector2SubtractValue"] = 
@@ -52,11 +52,14 @@ void main()
     new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2Scale, cast(Vector2 function(Vector2, float))&dVector2Scale);
     tcs["Vector2Rotate"] = 
     new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2Rotate, cast(Vector2 function(Vector2, float))&dVector2Rotate);
-    // return float, Vector2 param
+    // returns float, Vector2 param
     tcs["Vector2Length"] = 
     new TestCaseTV2(cast(float function(Vector2))&Vector2Length, cast(float function(Vector2))&dVector2Length);
     tcs["Vector2LengthSqr"] = 
     new TestCaseTV2(cast(float function(Vector2))&Vector2LengthSqr, cast(float function(Vector2))&dVector2LengthSqr);
+    // returns Vector2, Vector2 param
+    tcs["Vector2Negate"] = 
+    new TestCaseTV2(cast(Vector2 function(Vector2))&Vector2Negate, cast(Vector2 function(Vector2))&dVector2Negate);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
