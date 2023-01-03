@@ -25,6 +25,11 @@ void main()
     new TestCaseV2(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
     tcs["Vector2One"] = 
     new TestCaseV2(cast(Vector2 function())&Vector2One, cast(Vector2 function())&dVector2One);
+    // returns Vector2, 2 params
+    tcs["Vector2Add"] = 
+    new TestCaseV2(cast(Vector2 function(Vector2, Vector2))&Vector2Add, cast(Vector2 function(Vector2, Vector2))&dVector2Add);
+    tcs["Vector2Subtract"] = 
+    new TestCaseV2(cast(Vector2 function(Vector2, Vector2))&Vector2Subtract, cast(Vector2 function(Vector2, Vector2))&dVector2Subtract);
     // END Function Test Cases
     
     foreach (key, tc; tcs)
