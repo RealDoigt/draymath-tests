@@ -103,9 +103,9 @@ class TestCaseTV2V2(T) : TestCase
 
 class TestCaseV2V2F : TestCase
 {
-    private Vector2 function(Vector, float) rmf, dmf;
+    private Vector2 function(Vector2, float) rmf, dmf;
     
-    this(Vector2 function(Vector, float) rmf, Vector2 function(Vector, float) dmf)
+    this(Vector2 function(Vector2, float) rmf, Vector2 function(Vector, float) dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
@@ -127,9 +127,9 @@ class TestCaseV2V2F : TestCase
 
 class TestCaseTV2(T) : TestCase
 {
-    private T function(Vector) rmf, dmf;
+    private T function(Vector2) rmf, dmf;
     
-    this(T function(Vector) rmf, T function(Vector) dmf)
+    this(T function(Vector2) rmf, T function(Vector2) dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
@@ -143,6 +143,31 @@ class TestCaseTV2(T) : TestCase
                  v1 = Vector2(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r));
                  
             if (rmf(v0, v1) != dmf(v0, v1)) return false;
+        }
+        
+        return true;
+    }
+}
+
+class TestCaseV2V2V2F : TestCase
+{
+    private Vector2 function(Vector2, Vector2, float) rmf, dmf;
+    
+    this(Vector2 function(Vector2, Vector2, float) rmf, Vector2 function(Vector2, Vector2, float) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Vector2(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r)),
+                 v1 = Vector2(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r)),
+                 v2 = uniform(0f, rangeMax, r);
+                 
+            if (rmf(v0, v1, v2) != dmf(v0, v1, v2)) return false;
         }
         
         return true;
