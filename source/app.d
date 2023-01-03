@@ -55,6 +55,8 @@ void main()
     // return float, Vector2 param
     tcs["Vector2Length"] = 
     new TestCaseTV2(cast(float function(Vector2))&Vector2Length, cast(float function(Vector2))&dVector2Length);
+    tcs["Vector2LengthSqr"] = 
+    new TestCaseTV2(cast(float function(Vector2))&Vector2LengthSqr, cast(float function(Vector2))&dVector2LengthSqr);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
