@@ -34,6 +34,8 @@ void main()
     new TestCaseTV2V2(cast(Vector2 function(Vector2, Vector2))&Vector2Multiply, cast(Vector2 function(Vector2, Vector2))&dVector2Multiply);
     tcs["Vector2Divide"] = 
     new TestCaseTV2V2(cast(Vector2 function(Vector2, Vector2))&Vector2Divide, cast(Vector2 function(Vector2, Vector2))&dVector2Divide);
+    tcs["Vector2Reflect"] = 
+    new TestCaseTV2V2(cast(Vector2 function(Vector2, Vector2))&Vector2Reflect, cast(Vector2 function(Vector2, Vector2))&dVector2Reflect);
     // return float, 2 Vector2 params
     tcs["Vector2DotProduct"] = 
     new TestCaseTV2V2(cast(float function(Vector2, Vector2))&Vector2DotProduct, cast(float function(Vector2, Vector2))&dVector2DotProduct);
