@@ -28,7 +28,5 @@ void main()
     // END Function Test Cases
     
     foreach (key, tc; tcs)
-    {
         "%s: %s".writefln(key, tc.test);
-    }
 } 
