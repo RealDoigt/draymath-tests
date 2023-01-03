@@ -1,3 +1,4 @@
+import raylib;
 import raymath;
 import draymath;
 import std.stdio;
@@ -21,9 +22,9 @@ void main()
     new TestCaseFFFFF(cast(float function(float, float, float, float))&Remap, cast(float function(float, float, float, float))&Remap);
     // returns Vector2, no params
     tcs["Vector2Zero"] = 
-    new TestCaseFFFFF(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
+    new TestCaseV2(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
     tcs["Vector2One"] = 
-    new TestCaseFFFFF(cast(Vector2 function())&Vector2One, cast(Vector2 function())&dVector2One);
+    new TestCaseV2(cast(Vector2 function())&Vector2One, cast(Vector2 function())&dVector2One);
     // END Function Test Cases
     
     foreach (key, tc; tcs)
