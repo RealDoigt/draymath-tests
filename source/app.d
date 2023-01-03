@@ -33,6 +33,8 @@ void main()
     // return float, 2 Vector2 params
     tcs["Vector2DotProduct"] = 
     new TestCaseTV2V2(cast(float function(Vector2, Vector2))&Vector2DotProduct, cast(float function(Vector2, Vector2))&dVector2DotProduct);
+    tcs["Vector2Distance"] = 
+    new TestCaseTV2V2(cast(float function(Vector2, Vector2))&Vector2Distance, cast(float function(Vector2, Vector2))&dVector2Distance);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
