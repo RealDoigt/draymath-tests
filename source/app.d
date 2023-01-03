@@ -46,6 +46,8 @@ void main()
     // return Vector2, Vector2 and float params
     tcs["Vector2AddValue"] = 
     new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2AddValue, cast(Vector2 function(Vector2, float))&dVector2AddValue);
+    tcs["Vector2SubtractValue"] = 
+    new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2SubtractValue, cast(Vector2 function(Vector2, float))&dVector2SubtractValue);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
