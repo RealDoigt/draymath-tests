@@ -1,5 +1,6 @@
 module test_cases;
 import std.random;
+import std.io;
 import raylib;
 
 enum testQty = 500, rangeMax = 10_000f;
@@ -54,7 +55,12 @@ class TestCaseRemap : TestCase
                  v2 = uniform(0f, rangeMax, r),
                  v3 = uniform(v2 + 1, rangeMax, r);
                  
-            if (rmf(v0, v1, v2, v3) != dmf(v0, v1, v2, v3)) return false;
+            if (rmf(v0, v1, v2, v3) != dmf(v0, v1, v2, v3))
+            {
+                "Remap rmf(v0, v1, v2, v3):%f".writefln(rmf(v0, v1, v2, v3));
+                "Remap rmf(v0, v1, v2, v3):%f".writefln(dmf(v0, v1, v2, v3));
+                return false;
+            }
         }
         
         return true;
