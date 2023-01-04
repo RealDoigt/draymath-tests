@@ -173,3 +173,19 @@ class TestCaseV2V2V2F : TestCase
         return true;
     }
 }
+
+class TestCaseV3 : TestCase
+{
+    private Vector3 function() rmf, dmf;
+    
+    this(Vector3 function() rmf, Vector3 function() dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        return rmf() == dmf();
+    }
+}
