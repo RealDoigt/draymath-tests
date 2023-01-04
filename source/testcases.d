@@ -140,7 +140,6 @@ class TestCaseTV2(T) : TestCase
         for (size_t i; i < testQty; ++i)
         {
             auto v0 = Vector2(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r));
-                 
             if (rmf(v0) != dmf(v0)) return false;
         }
         
