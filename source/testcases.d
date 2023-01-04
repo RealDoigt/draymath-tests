@@ -35,7 +35,7 @@ class TestCaseFFFF : TestCase
     }
 }
 
-class TestCaseFFFFF : TestCase
+class TestCaseRemap : TestCase
 {
     private float function(float, float, float, float) rmf, dmf;
     
@@ -50,9 +50,9 @@ class TestCaseFFFFF : TestCase
         for (size_t i; i < testQty; ++i)
         {
             auto v0 = uniform(0f, rangeMax, r), 
-                 v1 = uniform(0f, rangeMax, r),
+                 v1 = uniform(v0 + 1, rangeMax, r),
                  v2 = uniform(0f, rangeMax, r),
-                 v3 = uniform(0f, rangeMax, r);
+                 v3 = uniform(v2 + 1, rangeMax, r);
                  
             if (rmf(v0, v1, v2, v3) != dmf(v0, v1, v2, v3)) return false;
         }
