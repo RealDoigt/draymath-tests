@@ -1,6 +1,6 @@
 module test_cases;
 import std.random;
-import std.io;
+import std.stdio;
 import raylib;
 
 enum testQty = 500, rangeMax = 10_000f;
