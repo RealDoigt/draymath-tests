@@ -17,7 +17,7 @@ void main()
     new TestCaseFFFF(cast(float function(float, float, float))&Lerp, cast(float function(float, float, float))&dLerp);
     tcs["Normalize"] = 
     new TestCaseFFFF(cast(float function(float, float, float))&Normalize, cast(float function(float, float, float))&dNormalize);
-    // returns float, 4 float params, TODO TEST -> this returns false even when compared against itself.
+    // returns float, 4 float params
     tcs["Remap"] = 
     new TestCaseRemap(cast(float function(float, float, float, float))&Remap, cast(float function(float, float, float, float))&dRemap);
     // returns Vector2, no params
