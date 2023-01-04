@@ -105,7 +105,7 @@ class TestCaseV2V2F : TestCase
 {
     private Vector2 function(Vector2, float) rmf, dmf;
     
-    this(Vector2 function(Vector2, float) rmf, Vector2 function(Vector, float) dmf)
+    this(Vector2 function(Vector2, float) rmf, Vector2 function(Vector2, float) dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
