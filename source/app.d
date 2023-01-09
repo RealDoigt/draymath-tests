@@ -22,9 +22,9 @@ void main()
     new TestCaseRemap(cast(float function(float, float, float, float))&Remap, cast(float function(float, float, float, float))&dRemap);
     // returns Vector2, no params
     tcs["Vector2Zero"] = 
-    new TestCaseV2(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
+    new TestCaseT!Vector2(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
     tcs["Vector2One"] = 
-    new TestCaseV2(cast(Vector2 function())&Vector2One, cast(Vector2 function())&dVector2One);
+    new TestCaseT!Vector2(cast(Vector2 function())&Vector2One, cast(Vector2 function())&dVector2One);
     // returns Vector2, 2 Vector2 params
     tcs["Vector2Add"] = 
     new TestCaseTV2V2!Vector2(cast(Vector2 function(Vector2, Vector2))&Vector2Add, cast(Vector2 function(Vector2, Vector2))&dVector2Add);
@@ -69,9 +69,9 @@ void main()
     new TestCaseV2V2V2F(cast(Vector2 function(Vector2, Vector2, float))&Vector2MoveTowards, cast(Vector2 function(Vector2, Vector2, float))&dVector2MoveTowards);
     // returns Vector3, no params
     tcs["Vector3Zero"] = 
-    new TestCaseV3(cast(Vector3 function())&Vector3Zero, cast(Vector3 function())&dVector3Zero);
+    new TestCaseT!Vector3(cast(Vector3 function())&Vector3Zero, cast(Vector3 function())&dVector3Zero);
     tcs["Vector3One"] = 
-    new TestCaseV3(cast(Vector3 function())&Vector3One, cast(Vector3 function())&dVector3One);
+    new TestCaseT!Vector3(cast(Vector3 function())&Vector3One, cast(Vector3 function())&dVector3One);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
