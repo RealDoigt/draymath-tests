@@ -67,11 +67,11 @@ class TestCaseRemap : TestCase
     }
 }
 
-class TestCaseV2 : TestCase
+class TestCaseT(T) : TestCase
 {
-    private Vector2 function() rmf, dmf;
+    private T function() rmf, dmf;
     
-    this(Vector2 function() rmf, Vector2 function() dmf)
+    this(T function() rmf, T function() dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
@@ -175,21 +175,5 @@ class TestCaseV2V2V2F : TestCase
         }
         
         return true;
-    }
-}
-
-class TestCaseV3 : TestCase
-{
-    private Vector3 function() rmf, dmf;
-    
-    this(Vector3 function() rmf, Vector3 function() dmf)
-    {
-        this.rmf = rmf;
-        this.dmf = dmf;
-    }
-    
-    override bool test()
-    {
-        return rmf() == dmf();
     }
 }
