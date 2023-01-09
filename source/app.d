@@ -87,6 +87,8 @@ void main()
     new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3CrossProduct, cast(Vector3 function(Vector3, Vector3))&dVector3CrossProduct);
     tcs["Vector3Min"] = 
     new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Min, cast(Vector3 function(Vector3, Vector3))&dVector3Min);
+    tcs["Vector3Max"] = 
+    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Max, cast(Vector3 function(Vector3, Vector3))&dVector3Max);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
