@@ -72,6 +72,17 @@ void main()
     new TestCaseT!Vector3(cast(Vector3 function())&Vector3Zero, cast(Vector3 function())&dVector3Zero);
     tcs["Vector3One"] = 
     new TestCaseT!Vector3(cast(Vector3 function())&Vector3One, cast(Vector3 function())&dVector3One);
+    // returns Vector3, 2 Vector3 params
+    tcs["Vector3Add"] = 
+    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Add, cast(Vector3 function(Vector3, Vector3))&dVector3Add);
+    tcs["Vector3Subtract"] = 
+    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Subtract, cast(Vector3 function(Vector3, Vector3))&dVector3Subtract);
+    tcs["Vector3Multiply"] = 
+    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Multiply, cast(Vector3 function(Vector3, Vector3))&dVector3Multiply);
+    tcs["Vector3Divide"] = 
+    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Divide, cast(Vector3 function(Vector3, Vector3))&dVector3Divide);
+    tcs["Vector3Reflect"] = 
+    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Reflect, cast(Vector3 function(Vector3, Vector3))&dVector3Reflect);
     // END Function Test Cases
     
     foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
