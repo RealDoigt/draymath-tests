@@ -3,10 +3,10 @@ import raymath;
 import draymath;
 import std.stdio;
 import test_cases;
+import std.algorithm;
 
 void main()
 {
-
     // BEGIN Adding Function Test Cases
     TestCase[string] tcs;
     
@@ -89,7 +89,15 @@ void main()
     new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Min, cast(Vector3 function(Vector3, Vector3))&dVector3Min);
     tcs["Vector3Max"] = 
     new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Max, cast(Vector3 function(Vector3, Vector3))&dVector3Max);
+    // return float, 2 Vector3 params
+    tcs["Vector3DotProduct"] = 
+    new TestCaseTV3V3!float(cast(float function(Vector3, Vector3))&Vector3DotProduct, cast(float function(Vector3, Vector3))&dVector3DotProduct);
+    tcs["Vector3Distance"] = 
+    new TestCaseTV3V3!float(cast(float function(Vector3, Vector3))&Vector3Distance, cast(float function(Vector3, Vector3))&dVector3Distance);
+    tcs["Vector3Angle"] = 
+    new TestCaseTV3V3!float(cast(float function(Vector3, Vector3))&Vector3Angle, cast(float function(Vector3, Vector3))&dVector3Angle);
     // END Function Test Cases
     
-    foreach (key, tc; tcs) "%s: %s".writefln(key, tc.test);
+    foreach (key; tcs.keys.sort!((a, b) => a < b)) 
+        "%s: %s".writefln(key, tcs[key].test);
 } 
