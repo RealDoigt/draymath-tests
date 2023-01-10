@@ -225,3 +225,25 @@ class TestCaseV3V3F : TestCase
         return true;
     }
 }
+
+class TestCaseTV3(T) : TestCase
+{
+    private T function(Vector3) rmf, dmf;
+    
+    this(T function(Vector3) rmf, T function(Vector3) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Vector2(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r));
+            if (rmf(v0) != dmf(v0)) return false;
+        }
+        
+        return true;
+    }
+}
