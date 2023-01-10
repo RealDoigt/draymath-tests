@@ -103,6 +103,11 @@ void main()
     new TestCaseV3V3F(cast(Vector3 function(Vector3, float))&Vector3SubtractValue, cast(Vector3 function(Vector3, float))&dVector3SubtractValue);
     tcs["Vector3Scale"] = 
     new TestCaseV3V3F(cast(Vector3 function(Vector3, float))&Vector3Scale, cast(Vector3 function(Vector3, float))&dVector3Scale);
+    // returns float, Vector3 param
+    tcs["Vector3Length"] = 
+    new TestCaseTV3!float(cast(float function(Vector3))&Vector3Length, cast(float function(Vector3))&dVector3Length);
+    tcs["Vector3LengthSqr"] = 
+    new TestCaseTV3!float(cast(float function(Vector3))&Vector3LengthSqr, cast(float function(Vector3))&dVector3LengthSqr);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
