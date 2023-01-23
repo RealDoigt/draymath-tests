@@ -135,6 +135,9 @@ void main()
     new TestCaseTM!float(cast(float function(Matrix))&MatrixDeterminant, cast(float function(Matrix))&dMatrixDeterminant);
     tcs["MatrixTrace"] =
     new TestCaseTM!float(cast(float function(Matrix))&MatrixTrace, cast(float function(Matrix))&dMatrixTrace);
+    // returns Matrix, Matrix param
+    tcs["MatrixTranspose"] =
+    new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixTranspose, cast(Matrix function(Matrix))&dMatrixTranspose);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
