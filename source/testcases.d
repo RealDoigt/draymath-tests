@@ -247,3 +247,31 @@ class TestCaseTV3(T) : TestCase
         return true;
     }
 }
+
+class TestCaseOrthonormalize : TestCase
+{
+    private void function(Vector3*, Vector3*) rmf, dmf;
+    
+    this(void function(Vector3*, Vector3*) rmf, void function(Vector3*, Vector3*) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0r = Vector3(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r)), 
+                 v1r = Vector3(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r));
+                 
+            auto v0d = v0r, v1d = v1r;
+            rmf(&v0r, &v1r);
+            dmf(&v0d, &v1d);
+            
+            if(v0r != v0d || v1r != v1d) return false;
+        }
+        
+        return true;
+    }
+}
