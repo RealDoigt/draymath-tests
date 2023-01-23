@@ -150,6 +150,7 @@ struct Matrix
 }+/
 
 // NOTE: Helper types to be used instead of array return types for *ToFloat functions
+/*
 struct float3
 {
     float[3] v;
@@ -158,7 +159,7 @@ struct float3
 struct float16
 {
     float[16] v;
-}
+}*/
 
 // Required for: sinf(), cosf(), tan(), atan2f(), sqrtf(), fminf(), fmaxf(), fabs()
 
