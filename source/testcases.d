@@ -307,3 +307,33 @@ class TestCaseV3Transform : TestCase
         return true;
     }
 }
+
+class TestCaseV3RotateByQuaternion : TestCase
+{
+    private Vector3 function(Vector3, Vector4) rmf, dmf;
+    
+    this(Vector3 function(Vector3, Vector4) rmf, Vector3 function(Vector3, Vector4) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Vector3(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r)), 
+                 v1 = Vector4
+                      (
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r)
+                      );
+                 
+            if (rmf(v0, v1) != dmf(v0, v1)) return false;
+        }
+        
+        return true;
+    }
+}
