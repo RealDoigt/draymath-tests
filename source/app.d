@@ -127,6 +127,9 @@ void main()
     // returns Vector3, Vector3 and 2 Matrix params
     tcs["Vector3Unproject"] = 
     new TestCaseV3Unproject(cast(Vector3 function(Vector3, Matrix, Matrix))&Vector3Unproject, cast(Vector3 function(Vector3, Matrix, Matrix))&dVector3Unproject);
+    // returns float3, Vector3 param
+    tcs["Vector3ToFloatV"] = 
+    new TestCaseF3V3(cast(float3 function(Vector3))&Vector3ToFloatV, cast(float3 function(Vector3))&dVector3ToFloatV);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
