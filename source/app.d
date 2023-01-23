@@ -108,6 +108,13 @@ void main()
     new TestCaseTV3!float(cast(float function(Vector3))&Vector3Length, cast(float function(Vector3))&dVector3Length);
     tcs["Vector3LengthSqr"] = 
     new TestCaseTV3!float(cast(float function(Vector3))&Vector3LengthSqr, cast(float function(Vector3))&dVector3LengthSqr);
+    // returns Vector3, Vector3 param
+    tcs["Vector3Perpendicular"] = 
+    new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Perpendicular, cast(Vector3 function(Vector3))&dVector3Perpendicular);
+    tcs["Vector3Negate"] = 
+    new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Negate, cast(Vector3 function(Vector3))&dVector3Negate);
+    tcs["Vector3Normalize"] = 
+    new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Normalize, cast(Vector3 function(Vector3))&dVector3Normalize);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
