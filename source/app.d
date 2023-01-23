@@ -138,6 +138,10 @@ void main()
     // returns Matrix, Matrix param
     tcs["MatrixTranspose"] =
     new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixTranspose, cast(Matrix function(Matrix))&dMatrixTranspose);
+    tcs["MatrixInvert"] =
+    new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixInvert, cast(Matrix function(Matrix))&dMatrixInvert);
+    tcs["MatrixNormalize"] =
+    new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixNormalize, cast(Matrix function(Matrix))&dMatrixNormalize);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
