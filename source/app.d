@@ -117,7 +117,7 @@ void main()
     new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Normalize, cast(Vector3 function(Vector3))&dVector3Normalize);
     // returns nothing, 2 Vector3 pointer params
     tcs["Vector3OrthoNormalize"] =
-    new TestCaseOrthonormalize(cast(void function(Vector3, Vector3))&Vector3OrthoNormalize, cast(void function(Vector3, Vector3))&dVector3OrthoNormalize);
+    new TestCaseOrthonormalize(cast(void function(Vector3*, Vector3*))&Vector3OrthoNormalize, cast(void function(Vector3*, Vector3*))&dVector3OrthoNormalize);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
