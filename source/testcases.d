@@ -405,3 +405,34 @@ class TestCaseF3V3 : TestCase
         return true;
     }
 }
+
+class TestCaseTM(T) : TestCase
+{
+    private T function(Matrix) rmf, dmf;
+    
+    this(T function(Matrix) rmf, T function(Matrix) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Matrix
+                      (
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), 
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), 
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r)
+                      );
+                      
+            if (rmf(v0) != dmf(v0)) return false;
+        }
+        
+        return true;
+    }
+}
