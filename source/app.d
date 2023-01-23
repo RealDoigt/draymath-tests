@@ -130,6 +130,9 @@ void main()
     // returns float3, Vector3 param
     tcs["Vector3ToFloatV"] = 
     new TestCaseF3V3(cast(float3 function(Vector3))&Vector3ToFloatV, cast(float3 function(Vector3))&dVector3ToFloatV);
+    // returns float, Matrix param
+    tcs["MatrixDeterminant"] =
+    new TestCaseTM!float(cast(float function(Matrix))&MatrixDeterminant, cast(float function(Matrix))&dMatrixDeterminant);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
