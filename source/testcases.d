@@ -378,3 +378,30 @@ class TestCaseV3Unproject : TestCase
         return true;
     }
 }
+
+class TestCaseF3V3 : TestCase
+{
+    private float3 function(Vector3) rmf, dmf;
+    
+    this(float3 function(Vector3) rmf, float3 function(Vector3) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Vector3(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r)),
+                 v1 = rmf(v0),
+                 v2 = dmf(v0);
+            
+            for (size_t j; i < 3; ++j) 
+                if(v1[j].v != v0[j].v) 
+                    return false;
+        }
+        
+        return true;
+    }
+}
