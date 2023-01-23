@@ -398,7 +398,7 @@ class TestCaseF3V3 : TestCase
                  v2 = dmf(v0);
             
             for (size_t j; i < 3; ++j) 
-                if(v1[j].v != v0[j].v) 
+                if(v1[j].v != v2[j].v) 
                     return false;
         }
         
