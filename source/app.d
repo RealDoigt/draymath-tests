@@ -123,7 +123,7 @@ void main()
     new TestCaseV3Transform(cast(Vector3 function(Vector3, Matrix))&Vector3Transform, cast(Vector3 function(Vector3, Matrix))&dVector3Transform);
     // returns Vector3, Vector3 and Vector4 params
     tcs["Vector3RotateByQuaternion"] = 
-    new TestCaseV3Transform(cast(Vector3 function(Vector3, Vector4))&Vector3RotateByQuaternion, cast(Vector3 function(Vector3, Vector4))&dVector3RotateByQuaternion);
+    new TestCaseV3RotateByQuaternion(cast(Vector3 function(Vector3, Vector4))&Vector3RotateByQuaternion, cast(Vector3 function(Vector3, Vector4))&dVector3RotateByQuaternion);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
