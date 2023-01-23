@@ -124,6 +124,9 @@ void main()
     // returns Vector3, Vector3 and Vector4 params
     tcs["Vector3RotateByQuaternion"] = 
     new TestCaseV3RotateByQuaternion(cast(Vector3 function(Vector3, Vector4))&Vector3RotateByQuaternion, cast(Vector3 function(Vector3, Vector4))&dVector3RotateByQuaternion);
+    // returns Vector3, Vector3 and 2 Matrix params
+    tcs["Vector3Unproject"] = 
+    new TestCaseV3Unproject(cast(Vector3 function(Vector3, Matrix, Matrix))&Vector3Unproject, cast(Vector3 function(Vector3, Matrix, Matrix))&dVector3Unproject);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
