@@ -12,11 +12,11 @@ void main()
     
     // returns float, 3 float params
     tcs["Clamp"] = 
-    new TestCaseFFFF(cast(float function(float, float, float))&Clamp, cast(float function(float, float, float))&dClamp);
+    new TestCaseTFFF!float(cast(float function(float, float, float))&Clamp, cast(float function(float, float, float))&dClamp);
     tcs["Lerp"] = 
-    new TestCaseFFFF(cast(float function(float, float, float))&Lerp, cast(float function(float, float, float))&dLerp);
+    new TestCaseTFFF!float(cast(float function(float, float, float))&Lerp, cast(float function(float, float, float))&dLerp);
     tcs["Normalize"] = 
-    new TestCaseFFFF(cast(float function(float, float, float))&Normalize, cast(float function(float, float, float))&dNormalize);
+    new TestCaseTFFF!float(cast(float function(float, float, float))&Normalize, cast(float function(float, float, float))&dNormalize);
     // returns float, 4 float params
     tcs["Remap"] = 
     new TestCaseRemap(cast(float function(float, float, float, float))&Remap, cast(float function(float, float, float, float))&dRemap);
@@ -152,6 +152,11 @@ void main()
     new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixSubtract, cast(Matrix function(Matrix, Matrix))&dMatrixSubtract);
     tcs["MatrixMultiply"] = 
     new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixMultiply, cast(Matrix function(Matrix, Matrix))&dMatrixMultiply);
+    // returns Matrix, 3 float params
+    tcs["MatrixTranslate"] = 
+    new TestCaseTFFF!Matrix(cast(Matrix function(float, float, float))&MatrixTranslate, cast(Matrix function(float, float, float))&dMatrixTranslate);
+    tcs["MatrixScale"] = 
+    new TestCaseTFFF!Matrix(cast(Matrix function(float, float, float))&MatrixScale, cast(Matrix function(float, float, float))&dMatrixScale);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
