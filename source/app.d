@@ -145,6 +145,13 @@ void main()
     // returns Matrix, no param
     tcs["MatrixIdentity"] = 
     new TestCaseT!Matrix(cast(Matrix function())&MatrixIdentity, cast(Matrix function())&dMatrixIdentity);
+    // returns Matrix, 2 Matrix params
+    tcs["MatrixAdd"] = 
+    new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixAdd, cast(Matrix function(Matrix, Matrix))&dMatrixAdd);
+    tcs["MatrixSubtract"] = 
+    new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixSubtract, cast(Matrix function(Matrix, Matrix))&dMatrixSubtract);
+    tcs["MatrixMultiply"] = 
+    new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixMultiply, cast(Matrix function(Matrix, Matrix))&dMatrixMultiply);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
