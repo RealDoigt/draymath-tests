@@ -11,11 +11,11 @@ abstract class TestCase
     bool test();
 }
 
-class TestCaseFFFF : TestCase
+class TestCaseTFFF(T) : TestCase
 {
-    private float function(float, float, float) rmf, dmf;
+    private T function(float, float, float) rmf, dmf;
     
-    this(float function(float, float, float) rmf, float function(float, float, float) dmf)
+    this(T function(float, float, float) rmf, T function(float, float, float) dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
