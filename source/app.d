@@ -157,6 +157,9 @@ void main()
     new TestCaseTFFF!Matrix(cast(Matrix function(float, float, float))&MatrixTranslate, cast(Matrix function(float, float, float))&dMatrixTranslate);
     tcs["MatrixScale"] = 
     new TestCaseTFFF!Matrix(cast(Matrix function(float, float, float))&MatrixScale, cast(Matrix function(float, float, float))&dMatrixScale);
+    // returns Matrix, Vector3 and float params
+    tcs["MatrixRotate"] = 
+    new TestCaseMRotate(cast(Matrix function(Vector3, float))&MatrixRotate, cast(Matrix function(Vector3, float))&dMatrixRotate);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
