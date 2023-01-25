@@ -167,6 +167,11 @@ void main()
     new TestCaseMF(cast(Matrix function(float))&MatrixRotateY, cast(Matrix function(float))&dMatrixRotateY);
     tcs["MatrixRotateZ"] = 
     new TestCaseMF(cast(Matrix function(float))&MatrixRotateZ, cast(Matrix function(float))&dMatrixRotateZ);
+    // returns Matrix, Vector3 param
+    tcs["MatrixRotateXYZ"] = 
+    new TestCaseTV3!Matrix(cast(Matrix function(Vector3))&MatrixRotateXYZ, cast(Matrix function(Vector3))&dMatrixRotateXYZ);
+    tcs["MatrixRotateZYX"] = 
+    new TestCaseTV3!Matrix(cast(Matrix function(Vector3))&MatrixRotateZYX, cast(Matrix function(Vector3))&dMatrixRotateZYX);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
