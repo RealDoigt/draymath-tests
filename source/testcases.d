@@ -500,3 +500,25 @@ class TestCaseMRotate : TestCase
         return true;
     }
 }
+
+class TestCaseMF : TestCase
+{
+    private Matrix function(float) rmf, dmf;
+    
+    this(Matrix function(float) rmf, Matrix function(float) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = uniform(0f, rangeMax, r);
+            if (rmf(v0) != dmf(v0)) return false;
+        }
+        
+        return true;
+    }
+}
