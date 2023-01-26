@@ -172,6 +172,11 @@ void main()
     new TestCaseTV3!Matrix(cast(Matrix function(Vector3))&MatrixRotateXYZ, cast(Matrix function(Vector3))&dMatrixRotateXYZ);
     tcs["MatrixRotateZYX"] = 
     new TestCaseTV3!Matrix(cast(Matrix function(Vector3))&MatrixRotateZYX, cast(Matrix function(Vector3))&dMatrixRotateZYX);
+    // returns Maxtrix, 6 Double params
+    tcs["MatrixFrustum"] = 
+    new TestCaseMDDDDDD(cast(Matrix function(double, double, double, double, double, double))&MatrixFrustum, cast(Matrix function(double, double, double, double, double, double))&dMatrixFrustum);
+    tcs["MatrixOrtho"] = 
+    new TestCaseMDDDDDD(cast(Matrix function(double, double, double, double, double, double))&MatrixOrtho, cast(Matrix function(double, double, double, double, double, double))&dMatrixOrtho);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
