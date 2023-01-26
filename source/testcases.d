@@ -522,3 +522,35 @@ class TestCaseMF : TestCase
         return true;
     }
 }
+
+class TestCaseMDDDDDD : TestCase
+{
+    private Matrix function(double, double, double, double, double, double) rmf, dmf;
+    
+    this
+    (
+        Matrix function(double, double, double, double, double, double) rmf, 
+        Matrix function(double, double, double, double, double, double) dmf
+    )
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = uniform(.0, rangeMax, r), 
+                 v1 = uniform(.0, rangeMax, r),
+                 v2 = uniform(.0, rangeMax, r),
+                 v3 = uniform(.0, rangeMax, r),
+                 v4 = uniform(.0, rangeMax, r),
+                 v5 = uniform(.0, rangeMax, r);
+                 
+            if (rmf(v0, v1, v2, v3, v4, v5) != dmf(v0, v1, v2, v3, v4, v5)) return false;
+        }
+        
+        return true;
+    }
+}
