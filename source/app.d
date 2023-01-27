@@ -210,6 +210,9 @@ void main()
     new TestCaseTV4!Vector4(cast(Vector4 function(Vector4))&QuaternionNormalize, cast(Vector4 function(Vector4))&dQuaternionNormalize);
     tcs["QuaternionInvert"] = 
     new TestCaseTV4!Vector4(cast(Vector4 function(Vector4))&QuaternionInvert, cast(Vector4 function(Vector4))&dQuaternionInvert);
+    // returns Vector4, 2 Vector4 and 1 float params
+    tcs["QuaternionLerp"] = 
+    new TestCaseV4V4V4F(cast(Vector4 function(Vector4, Vector4, float))&QuaternionLerp, cast(Vector4 function(Vector4, Vector4, float))&dQuaternionLerp);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
