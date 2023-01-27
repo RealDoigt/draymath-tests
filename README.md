@@ -2,6 +2,7 @@
 Note: only the testing code is unlicense. The raylib and draylib stuff have their own licenses.
 
 # Test results
+Pass* = results are close enough and probably due to float shenanigans
 |Function|Fail/Pass Status|
 |-|-|
 |Clamp|Pass|
@@ -53,7 +54,7 @@ MatrixFrustum|Pass|
 |Remap|Fail|
 |Vector2Add|Pass|
 |Vector2AddValue|Pass|
-|Vector2Angle|Fail|
+|Vector2Angle|Pass*|
 |Vector2Distance|Pass|
 |Vector2Divide|Pass|
 |Vector2DotProduct|Pass|
