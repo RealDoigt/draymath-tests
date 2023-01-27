@@ -96,9 +96,13 @@ class TestCaseT(T) : TestCase
 
 class TestCaseTV2V2(T) : TestCase
 {
-    private T function(Vector2, Vector2) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) T function(Vector2, Vector2) @nogc nothrow;
+        RMF rmf, dmf;
+    }
     
-    this(T function(Vector2, Vector2) rmf, T function(Vector2, Vector2) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;

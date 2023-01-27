@@ -20,16 +20,11 @@ void main()
     tcs["Vector2Zero"] = new TestCaseT!Vector2(&Vector2Zero, &dVector2Zero);
     tcs["Vector2One"] = new TestCaseT!Vector2(&Vector2One, &dVector2One);
     // returns Vector2, 2 Vector2 params
-    tcs["Vector2Add"] = 
-    new TestCaseTV2V2!Vector2(cast(Vector2 function(Vector2, Vector2))&Vector2Add, cast(Vector2 function(Vector2, Vector2))&dVector2Add);
-    tcs["Vector2Subtract"] = 
-    new TestCaseTV2V2!Vector2(cast(Vector2 function(Vector2, Vector2))&Vector2Subtract, cast(Vector2 function(Vector2, Vector2))&dVector2Subtract);
-    tcs["Vector2Multiply"] = 
-    new TestCaseTV2V2!Vector2(cast(Vector2 function(Vector2, Vector2))&Vector2Multiply, cast(Vector2 function(Vector2, Vector2))&dVector2Multiply);
-    tcs["Vector2Divide"] = 
-    new TestCaseTV2V2!Vector2(cast(Vector2 function(Vector2, Vector2))&Vector2Divide, cast(Vector2 function(Vector2, Vector2))&dVector2Divide);
-    tcs["Vector2Reflect"] = 
-    new TestCaseTV2V2!Vector2(cast(Vector2 function(Vector2, Vector2))&Vector2Reflect, cast(Vector2 function(Vector2, Vector2))&dVector2Reflect);
+    tcs["Vector2Add"] = new TestCaseTV2V2!Vector2(&Vector2Add, &dVector2Add);
+    tcs["Vector2Subtract"] = new TestCaseTV2V2!Vector2(&Vector2Subtract, &dVector2Subtract);
+    tcs["Vector2Multiply"] = new TestCaseTV2V2!Vector2(&Vector2Multiply, &dVector2Multiply);
+    tcs["Vector2Divide"] = new TestCaseTV2V2!Vector2(&Vector2Divide, &dVector2Divide);
+    tcs["Vector2Reflect"] = new TestCaseTV2V2!Vector2(&Vector2Reflect, &dVector2Reflect);
     // return float, 2 Vector2 params
     tcs["Vector2DotProduct"] = 
     new TestCaseTV2V2!float(cast(float function(Vector2, Vector2))&Vector2DotProduct, cast(float function(Vector2, Vector2))&dVector2DotProduct);
