@@ -56,9 +56,9 @@ class TestCaseRemap : TestCase
                  v3 = uniform(v2 + 1, rangeMax, r);
                  
             if (rmf(v0, v1, v2, v3) != dmf(v0, v1, v2, v3))
-            {/*
+            {
                 "Remap rmf(v0, v1, v2, v3):%f".writefln(rmf(v0, v1, v2, v3));
-                "Remap dmf(v0, v1, v2, v3):%f".writefln(dmf(v0, v1, v2, v3));*/
+                "Remap dmf(v0, v1, v2, v3):%f".writefln(dmf(v0, v1, v2, v3));
                 return false;
             }
         }
@@ -100,7 +100,12 @@ class TestCaseTV2V2(T) : TestCase
             auto v0 = Vector2(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r)), 
                  v1 = Vector2(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r));
                  
-            if (rmf(v0, v1) != dmf(v0, v1)) return false;
+            if (rmf(v0, v1) != dmf(v0, v1))
+            {
+                "V2A rmf(v0, v1):".writefln(rmf(v0, v1));
+                "V2A dmf(v0, v1):".writefln(dmf(v0, v1));
+                return false;
+            }
         }
         
         return true;
