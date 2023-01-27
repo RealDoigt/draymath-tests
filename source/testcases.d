@@ -102,8 +102,8 @@ class TestCaseTV2V2(T) : TestCase
                  
             if (rmf(v0, v1) != dmf(v0, v1))
             {
-                "V2A rmf(v0, v1):".writefln(rmf(v0, v1));
-                "V2A dmf(v0, v1):".writefln(dmf(v0, v1));
+                "V2A rmf(v0, v1): %f".writefln(rmf(v0, v1));
+                "V2A dmf(v0, v1): %f".writefln(dmf(v0, v1));
                 return false;
             }
         }
