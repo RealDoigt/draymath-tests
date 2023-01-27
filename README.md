@@ -34,7 +34,7 @@ MatrixFrustum|Pass|
 |QuaternionDivide|Pass|
 |QuaternionFromAxisAngle|Pass|
 |QuaternionFromEuler|Pass|
-|QuaternionFromMatrix|Fail|
+|QuaternionFromMatrix|Pass*|
 |QuaternionFromVector3ToVector3|Pass|
 |QuaternionIdentity|Pass|
 |QuaternionInvert|Pass|
