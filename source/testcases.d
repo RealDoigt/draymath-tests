@@ -607,7 +607,9 @@ class TestCaseMToFloatV : TestCase
                         uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
                         uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
                         uniform(0f, rangeMax, r)
-                      );
+                      ),
+                 v1 = rmf(v0),
+                 v2 = dmf(v0);
             
             for (size_t j; j < 16; ++j) 
                 if(v1.v[j] != v2.v[j]) 
