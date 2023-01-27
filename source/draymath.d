@@ -196,7 +196,7 @@ float dNormalize(float value, float start, float end)
 // Remap input value within input range to output range
 float dRemap(float value, float inputStart, float inputEnd, float outputStart, float outputEnd)
 {
-    float result = (value - inputStart) / (inputEnd - inputStart) * (outputEnd - outputStart) + outputStart;
+    float result =(value - inputStart)/(inputEnd - inputStart)*(outputEnd - outputStart) + outputStart;
 
     return result;
 }
