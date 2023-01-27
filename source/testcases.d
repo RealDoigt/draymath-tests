@@ -655,3 +655,33 @@ class TestCaseTV4V4(T) : TestCase
         return true;
     }
 }
+
+class TestCaseV4V4F : TestCase
+{
+    private Vector4 function(Vector4, float) rmf, dmf;
+    
+    this(Vector4 function(Vector4, float) rmf, Vector4 function(Vector4, float) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Vector4
+                 (
+                    uniform(0f, rangeMax, r), 
+                    uniform(0f, rangeMax, r), 
+                    uniform(0f, rangeMax, r), 
+                    uniform(0f, rangeMax, r)
+                 ), 
+                 v1 = uniform(0f, rangeMax, r);
+                 
+            if (rmf(v0, v1) != dmf(v0, v1)) return false;
+        }
+        
+        return true;
+    }
+}
