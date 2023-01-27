@@ -199,6 +199,9 @@ void main()
     new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionSubtractValue, cast(Vector4 function(Vector4, float))&dQuaternionSubtractValue);
     tcs["QuaternionScale"] = 
     new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionScale, cast(Vector4 function(Vector4, float))&dQuaternionScale);
+    // returns Vector4, no param
+    tcs["QuaternionIdentity"] = 
+    new TestCaseT!Quaternion(cast(Quaternion function())&QuaternionIdentity, cast(Quaternion function())&dQuaternionIdentity);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
