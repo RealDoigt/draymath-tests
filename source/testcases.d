@@ -437,7 +437,18 @@ class TestCaseTM(T) : TestCase
                         uniform(0f, rangeMax, r)
                       );
                       
-            if (rmf(v0) != dmf(v0)) return false;
+            if (rmf(v0) != dmf(v0))
+            {
+                auto resr = rmf(v0), resd = dmf(v0);
+                "QFM Test #%d".writefln(i);
+                
+                "raymath:".write;
+                writeln(resr);
+                
+                "draymath:".write;
+                writeln(resd);
+                return false;
+            }
         }
         
         return true;
