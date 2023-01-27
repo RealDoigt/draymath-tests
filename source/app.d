@@ -232,6 +232,9 @@ void main()
     // returns nothing; Vector4, Vector3 pointer and float pointer params
     tcs["QuaternionToAxisAngle"] = 
     new TestCaseV4ToAxisAngle(cast(void function(Vector4, Vector3*, float*))&QuaternionToAxisAngle, cast(void function(Vector4, Vector3*, float*))&dQuaternionToAxisAngle);
+    // returns Vector4, 3 float params
+    tcs["QuaternionFromEuler"] = 
+    new TestCaseTFFF!Vector4(cast(Vector4 function(float, float, float))&QuaternionFromEuler, cast(Vector4 function(float, float, float))&dQuaternionFromEuler);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
