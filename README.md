@@ -1,6 +1,6 @@
 # draymath-tests
 Note: only the testing code is unlicense. The raylib and draylib stuff have their own licenses.
-
+Please don't use this code; it's garbage throwaway code.
 # Test results
 Pass* = results are close enough and probably due to float shenanigans
 |Function|Fail/Pass Status|
