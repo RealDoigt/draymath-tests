@@ -1715,7 +1715,7 @@ Quaternion dQuaternionFromVector3ToVector3(Vector3 from, Vector3 to)
 // Get a quaternion for a given rotation matrix
 Quaternion dQuaternionFromMatrix(Matrix mat)
 {
-    auto result = Vector4(0, 0, 0, 0);
+    auto result = Vector4(0f, 0f, 0f, 0f);
 
     if ((mat.m0 > mat.m5) && (mat.m0 > mat.m10))
     {
