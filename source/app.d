@@ -180,6 +180,15 @@ void main()
     // returns Matrix, 4 Double params
     tcs["MatrixPerspective"] = 
     new TestCaseMPerspective(cast(Matrix function(double, double, double, double))&MatrixPerspective, cast(Matrix function(double, double, double, double))&dMatrixPerspective);
+    // returns Vector4, 2 Vector4 params
+    tcs["QuaternionAdd"] = 
+    new TestCaseTV4V4!Vector4(cast(Vector4 function(Vector4, Vector4))&QuaternionAdd, cast(Vector4 function(Vector4, Vector4))&dQuaternionAdd);
+    tcs["QuaternionSubtract"] = 
+    new TestCaseTV4V4!Vector4(cast(Vector4 function(Vector4, Vector4))&QuaternionSubtract, cast(Vector4 function(Vector4, Vector4))&dQuaternionSubtract);
+    tcs["QuaternionMultiply"] = 
+    new TestCaseTV4V4!Vector4(cast(Vector4 function(Vector4, Vector4))&QuaternionMultiply, cast(Vector4 function(Vector4, Vector4))&dQuaternionMultiply);
+    tcs["QuaternionDivide"] = 
+    new TestCaseTV4V4!Vector4(cast(Vector4 function(Vector4, Vector4))&QuaternionDivide, cast(Vector4 function(Vector4, Vector4))&dQuaternionDivide);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
