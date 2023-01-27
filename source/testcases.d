@@ -811,3 +811,41 @@ class TestCaseV4ToAxisAngle : TestCase
         return true;
     }
 }
+
+class TestCaseV4Transform : TestCase
+{
+    private Vector4 function(Vector4, Matrix) rmf, dmf;
+    
+    this(Vector4 function(Vector4, Matrix) rmf, Vector4 function(Vector4, Matrix) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Vector4
+                      (
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r)
+                      ),
+                 v1 = Matrix
+                      (
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r)
+                      ); 
+                      
+            if (rmf(v0, v1) != dmf(v0, v1)) return false;
+        }
+        
+        return true;
+    }
+}
