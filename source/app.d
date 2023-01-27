@@ -202,6 +202,9 @@ void main()
     // returns Vector4, no param
     tcs["QuaternionIdentity"] = 
     new TestCaseT!Quaternion(cast(Quaternion function())&QuaternionIdentity, cast(Quaternion function())&dQuaternionIdentity);
+    // returns float, Vector4 param
+    tcs["QuaternionLength"] = 
+    new TestCaseTV4!float(cast(float function(Vector4))&QuaternionLength, cast(float function(Vector4))&dQuaternionLength);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
