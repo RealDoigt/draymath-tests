@@ -208,6 +208,8 @@ void main()
     // returns Vector4, Vector4 param
     tcs["QuaternionNormalize"] = 
     new TestCaseTV4!Vector4(cast(Vector4 function(Vector4))&QuaternionNormalize, cast(Vector4 function(Vector4))&dQuaternionNormalize);
+    tcs["QuaternionInvert"] = 
+    new TestCaseTV4!Vector4(cast(Vector4 function(Vector4))&QuaternionInvert, cast(Vector4 function(Vector4))&dQuaternionInvert);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
