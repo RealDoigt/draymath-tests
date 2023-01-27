@@ -223,6 +223,9 @@ void main()
     // returns Vector4, Matrix param
     tcs["QuaternionFromMatrix"] =
     new TestCaseTM!Vector4(cast(Vector4 function(Matrix))&QuaternionFromMatrix, cast(Vector4 function(Matrix))&dQuaternionFromMatrix);
+    // returns Matrix, Vector4 param
+    tcs["QuaternionToMatrix"] = 
+    new TestCaseTV4!Matrix(cast(Matrix function(Vector4))&QuaternionToMatrix, cast(Matrix function(Vector4))&dQuaternionToMatrix);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
