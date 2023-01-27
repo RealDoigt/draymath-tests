@@ -585,6 +585,39 @@ class TestCaseMPerspective : TestCase
     }
 }
 
+class TestCaseMToFloatV : TestCase
+{
+    private float16 function(Matrix) rmf, dmf;
+    
+    this(float16 function(Matrix) rmf, float16 function(Matrix) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Matrix
+                      (
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), 
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), 
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r)
+                      );
+            
+            for (size_t j; j < 16; ++j) 
+                if(v1.v[j] != v2.v[j]) 
+                    return false;
+        }
+        
+        return true;
+    }
+}
+
 class TestCaseTV4V4(T) : TestCase
 {
     private T function(Vector4, Vector4) rmf, dmf;
