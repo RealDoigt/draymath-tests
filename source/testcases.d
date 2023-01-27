@@ -608,10 +608,10 @@ class TestCaseTV4V4(T) : TestCase
                       ), 
                  v1 = Vector4
                       (
-                       uniform(0f, rangeMax, r),
-                       uniform(0f, rangeMax, r),
-                       uniform(0f, rangeMax, r),
-                       uniform(0f, rangeMax, r)
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r),
+                        uniform(0f, rangeMax, r)
                       );
                  
             if (rmf(v0, v1) != dmf(v0, v1)) return false;
