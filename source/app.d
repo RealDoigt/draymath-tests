@@ -7,7 +7,7 @@ import std.algorithm;
 
 void main()
 {
-    // BEGIN Adding Function Test Cases
+    // BEGIN Function Test Cases
     TestCase[string] tcs;
     
     // returns float, 3 float params
