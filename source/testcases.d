@@ -76,9 +76,13 @@ class TestCaseRemap : TestCase
 
 class TestCaseT(T) : TestCase
 {
-    private T function() rmf, dmf;
+    private 
+    {
+        alias RMF = extern(C) T function() @nogc nothrow;
+        RMF rmf, dmf;
+    }
     
-    this(T function() rmf, T function() dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;

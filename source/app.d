@@ -15,13 +15,10 @@ void main()
     tcs["Lerp"] = new TestCaseTFFF!float(&Lerp, &dLerp);
     tcs["Normalize"] = new TestCaseTFFF!float(&Normalize, &dNormalize);
     // returns float, 5 float params
-    tcs["Remap"] = 
-    new TestCaseRemap(&Remap, &dRemap);
+    tcs["Remap"] = new TestCaseRemap(&Remap, &dRemap);
     // returns Vector2, no params
-    tcs["Vector2Zero"] = 
-    new TestCaseT!Vector2(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
-    tcs["Vector2One"] = 
-    new TestCaseT!Vector2(cast(Vector2 function())&Vector2One, cast(Vector2 function())&dVector2One);
+    tcs["Vector2Zero"] = new TestCaseT!Vector2(&Vector2Zero, &dVector2Zero);
+    tcs["Vector2One"] = new TestCaseT!Vector2(&Vector2One, &dVector2One);
     // returns Vector2, 2 Vector2 params
     tcs["Vector2Add"] = 
     new TestCaseTV2V2!Vector2(cast(Vector2 function(Vector2, Vector2))&Vector2Add, cast(Vector2 function(Vector2, Vector2))&dVector2Add);
