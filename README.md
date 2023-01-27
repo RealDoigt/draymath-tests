@@ -3,7 +3,7 @@ Note: only the testing code is unlicense. The raylib and draylib stuff have thei
 
 # Test results
 |Function|Fail/Pass Status|
--
+|-|-|
 |Clamp|Pass|
 |Lerp|Pass|
 |MatrixAdd|Pass|
