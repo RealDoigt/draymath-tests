@@ -17,7 +17,7 @@ void main()
     new TestCaseTFFF!float(cast(float function(float, float, float))&Lerp, cast(float function(float, float, float))&dLerp);
     tcs["Normalize"] = 
     new TestCaseTFFF!float(cast(float function(float, float, float))&Normalize, cast(float function(float, float, float))&dNormalize);
-    // returns float, 4 float params
+    // returns float, 5 float params
     tcs["Remap"] = 
     new TestCaseRemap(&Remap, &dRemap);
     // returns Vector2, no params
