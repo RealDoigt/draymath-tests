@@ -775,3 +775,39 @@ class TestCaseV4FromAxisAngle : TestCase
         return true;
     }
 }
+
+class TestCaseV4ToAxisAngle : TestCase
+{
+    private void function(Vector4, Vector3*, float*) rmf, dmf;
+    
+    this(void function(Vector4, Vector3*, float*) rmf, void function(Vector4, Vector3*, float*) dmf)
+    {
+        this.rmf = rmf;
+        this.dmf = dmf;
+    }
+    
+    override bool test()
+    {
+        for (size_t i; i < testQty; ++i)
+        {
+            auto v0 = Vector4
+                      (
+                        uniform(0f, rangeMax, r), 
+                        uniform(0f, rangeMax, r), 
+                        uniform(0f, rangeMax, r), 
+                        uniform(0f, rangeMax, r)
+                      ),
+                 v1 = Vector3(uniform(0f, rangeMax, r), uniform(0f, rangeMax, r), uniform(0f, rangeMax, r)),
+                 v2 = uniform(0f, rangeMax, r),
+                 v3 = v1,
+                 v4 = v2;
+                 
+            rmf(v0, &v1, &v2);
+            dmf(v0, &v3, &v4);
+                      
+            if (v1 != v3 || v2 != v4) return false;
+        }
+        
+        return true;
+    }
+}
