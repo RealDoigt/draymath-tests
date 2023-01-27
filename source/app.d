@@ -11,12 +11,9 @@ void main()
     TestCase[string] tcs;
     
     // returns float, 3 float params
-    tcs["Clamp"] = 
-    new TestCaseTFFF!float(cast(float function(float, float, float))&Clamp, cast(float function(float, float, float))&dClamp);
-    tcs["Lerp"] = 
-    new TestCaseTFFF!float(cast(float function(float, float, float))&Lerp, cast(float function(float, float, float))&dLerp);
-    tcs["Normalize"] = 
-    new TestCaseTFFF!float(cast(float function(float, float, float))&Normalize, cast(float function(float, float, float))&dNormalize);
+    tcs["Clamp"] = new TestCaseTFFF!float(&Clamp, &dClamp);
+    tcs["Lerp"] = new TestCaseTFFF!float(&Lerp, &dLerp);
+    tcs["Normalize"] = new TestCaseTFFF!float(&Normalize, &dNormalize);
     // returns float, 5 float params
     tcs["Remap"] = 
     new TestCaseRemap(&Remap, &dRemap);

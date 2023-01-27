@@ -13,9 +13,13 @@ abstract class TestCase
 
 class TestCaseTFFF(T) : TestCase
 {
-    private T function(float, float, float) rmf, dmf;
+    private 
+    {
+        alias RMF = extern(C) T function(float, float, float) @nogc nothrow;
+        RMF rmf, dmf;
+    }
     
-    this(T function(float, float, float) rmf, T function(float, float, float) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
