@@ -192,6 +192,13 @@ void main()
     new TestCaseTV4V4!Vector4(cast(Vector4 function(Vector4, Vector4))&QuaternionMultiply, cast(Vector4 function(Vector4, Vector4))&dQuaternionMultiply);
     tcs["QuaternionDivide"] = 
     new TestCaseTV4V4!Vector4(cast(Vector4 function(Vector4, Vector4))&QuaternionDivide, cast(Vector4 function(Vector4, Vector4))&dQuaternionDivide);
+    // returns Vector4, Vector4 and float params
+    tcs["QuaternionAddValue"] = 
+    new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionAddValue, cast(Vector4 function(Vector4, float))&dQuaternionAddValue);
+    tcs["QuaternionSubtractValue"] = 
+    new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionSubtractValue, cast(Vector4 function(Vector4, float))&dQuaternionSubtractValue);
+    tcs["QuaternionScale"] = 
+    new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionScale, cast(Vector4 function(Vector4, float))&dQuaternionScale);
     // END Function Test Cases
     
     foreach (key; tcs.keys.sort!((a, b) => a < b)) 
