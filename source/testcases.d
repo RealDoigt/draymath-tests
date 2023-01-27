@@ -38,9 +38,10 @@ class TestCaseTFFF(T) : TestCase
 
 class TestCaseRemap : TestCase
 {
-    private float function(float, float, float, float) rmf, dmf;
+    private alias RMF = extern(C) float function(float, float, float, float, float) @nogc nothrow;
+    private RMF rmf, dmf;
     
-    this(float function(float, float, float, float) rmf, float function(float, float, float, float) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
@@ -55,11 +56,11 @@ class TestCaseRemap : TestCase
                  v2 = uniform(0f, rangeMax, r),
                  v3 = uniform(v2 + 1, rangeMax, r);
                  
-            if (rmf(v0, v1, v2, v3) != dmf(v0, v1, v2, v3))
+            if (rmf(v0, v1, v2, v3, v3) != dmf(v0, v1, v2, v3, v3))
             {
                 "Remap Test #%d".writefln(i);
-                "raymath:%f".writefln(rmf(v0, v1, v2, v3));
-                "draymath:%f".writefln(dmf(v0, v1, v2, v3));
+                "raymath:%f".writefln(rmf(v0, v1, v2, v3, v3));
+                "draymath:%f".writefln(dmf(v0, v1, v2, v3, v3));
                 return false;
             }
         }

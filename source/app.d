@@ -19,7 +19,7 @@ void main()
     new TestCaseTFFF!float(cast(float function(float, float, float))&Normalize, cast(float function(float, float, float))&dNormalize);
     // returns float, 4 float params
     tcs["Remap"] = 
-    new TestCaseRemap(cast(float function(float, float, float, float))&Remap, cast(float function(float, float, float, float))&dRemap);
+    new TestCaseRemap(&Remap, &dRemap);
     // returns Vector2, no params
     tcs["Vector2Zero"] = 
     new TestCaseT!Vector2(cast(Vector2 function())&Vector2Zero, cast(Vector2 function())&dVector2Zero);
