@@ -30,14 +30,10 @@ void main()
     tcs["Vector2Distance"] = new TestCaseTV2V2!float(&Vector2Distance, &dVector2Distance);
     tcs["Vector2Angle"] = new TestCaseTV2V2!float(&Vector2Angle, &dVector2Angle);
     // returns Vector2, Vector2 and float params
-    tcs["Vector2AddValue"] =
-    new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2AddValue, cast(Vector2 function(Vector2, float))&dVector2AddValue);
-    tcs["Vector2SubtractValue"] =
-    new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2SubtractValue, cast(Vector2 function(Vector2, float))&dVector2SubtractValue);
-    tcs["Vector2Scale"] =
-    new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2Scale, cast(Vector2 function(Vector2, float))&dVector2Scale);
-    tcs["Vector2Rotate"] =
-    new TestCaseV2V2F(cast(Vector2 function(Vector2, float))&Vector2Rotate, cast(Vector2 function(Vector2, float))&dVector2Rotate);
+    tcs["Vector2AddValue"] = new TestCaseV2V2F(&Vector2AddValue, &dVector2AddValue);
+    tcs["Vector2SubtractValue"] = new TestCaseV2V2F(&Vector2SubtractValue, &dVector2SubtractValue);
+    tcs["Vector2Scale"] = new TestCaseV2V2F(&Vector2Scale, &dVector2Scale);
+    tcs["Vector2Rotate"] = new TestCaseV2V2F(&Vector2Rotate, &dVector2Rotate);
     // returns float, Vector2 param
     tcs["Vector2Length"] =
     new TestCaseTV2!float(cast(float function(Vector2))&Vector2Length, cast(float function(Vector2))&dVector2Length);
