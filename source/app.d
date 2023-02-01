@@ -61,12 +61,9 @@ void main()
     // return Vector2, 2 Vector3 params
     tcs["Vector3Angle"] = new TestCaseTV3V3!Vector2(&Vector3Angle, &dVector3Angle);
     // returns Vector3, Vector3 and float params
-    tcs["Vector3AddValue"] =
-    new TestCaseV3V3F(cast(Vector3 function(Vector3, float))&Vector3AddValue, cast(Vector3 function(Vector3, float))&dVector3AddValue);
-    tcs["Vector3SubtractValue"] =
-    new TestCaseV3V3F(cast(Vector3 function(Vector3, float))&Vector3SubtractValue, cast(Vector3 function(Vector3, float))&dVector3SubtractValue);
-    tcs["Vector3Scale"] =
-    new TestCaseV3V3F(cast(Vector3 function(Vector3, float))&Vector3Scale, cast(Vector3 function(Vector3, float))&dVector3Scale);
+    tcs["Vector3AddValue"] = new TestCaseV3V3F(&Vector3AddValue, &dVector3AddValue);
+    tcs["Vector3SubtractValue"] = new TestCaseV3V3F(&Vector3SubtractValue, &dVector3SubtractValue);
+    tcs["Vector3Scale"] = new TestCaseV3V3F(&Vector3Scale, &dVector3Scale);
     // returns float, Vector3 param
     tcs["Vector3Length"] =
     new TestCaseTV3!float(cast(float function(Vector3))&Vector3Length, cast(float function(Vector3))&dVector3Length);

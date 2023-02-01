@@ -236,9 +236,13 @@ class TestCaseTV3V3(T) : TestCase
 
 class TestCaseV3V3F : TestCase
 {
-    private Vector3 function(Vector3, float) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) Vector3 function(Vector3, float) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(Vector3 function(Vector3, float) rmf, Vector3 function(Vector3, float) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
