@@ -44,10 +44,8 @@ void main()
     tcs["Vector2Lerp"] = new TestCaseV2V2V2F(&Vector2Lerp, &dVector2Lerp);
     tcs["Vector2MoveTowards"] = new TestCaseV2V2V2F(&Vector2MoveTowards, &dVector2MoveTowards);
     // returns Vector3, no params
-    tcs["Vector3Zero"] =
-    new TestCaseT!Vector3(cast(Vector3 function())&Vector3Zero, cast(Vector3 function())&dVector3Zero);
-    tcs["Vector3One"] =
-    new TestCaseT!Vector3(cast(Vector3 function())&Vector3One, cast(Vector3 function())&dVector3One);
+    tcs["Vector3Zero"] = new TestCaseT!Vector3(&Vector3Zero, &dVector3Zero);
+    tcs["Vector3One"] = new TestCaseT!Vector3(&Vector3One, &dVector3One);
     // returns Vector3, 2 Vector3 params
     tcs["Vector3Add"] =
     new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Add, cast(Vector3 function(Vector3, Vector3))&dVector3Add);
