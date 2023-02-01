@@ -38,10 +38,8 @@ void main()
     tcs["Vector2Length"] = new TestCaseTV2!float(&Vector2Length, &dVector2Length);
     tcs["Vector2LengthSqr"] = new TestCaseTV2!float(&Vector2LengthSqr, &dVector2LengthSqr);
     // returns Vector2, Vector2 param
-    tcs["Vector2Negate"] =
-    new TestCaseTV2!Vector2(cast(Vector2 function(Vector2))&Vector2Negate, cast(Vector2 function(Vector2))&dVector2Negate);
-    tcs["Vector2Normalize"] =
-    new TestCaseTV2!Vector2(cast(Vector2 function(Vector2))&Vector2Normalize, cast(Vector2 function(Vector2))&dVector2Normalize);
+    tcs["Vector2Negate"] = new TestCaseTV2!Vector2(&Vector2Negate, &dVector2Negate);
+    tcs["Vector2Normalize"] = new TestCaseTV2!Vector2(&Vector2Normalize, &dVector2Normalize);
     // returns Vector2, 2 Vector2 and 1 float params
     tcs["Vector2Lerp"] =
     new TestCaseV2V2V2F(cast(Vector2 function(Vector2, Vector2, float))&Vector2Lerp, cast(Vector2 function(Vector2, Vector2, float))&dVector2Lerp);
