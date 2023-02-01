@@ -62,12 +62,7 @@ class TestCaseRemap : TestCase
                  v4 = uniform(0f, rangeMax, r);
 
             if (rmf(v0, v1, v2, v3, v4) != dmf(v0, v1, v2, v3, v4))
-            {
-                "Remap Test #%d".writefln(i);
-                "raymath:%f".writefln(rmf(v0, v1, v2, v3, v4));
-                "draymath:%f".writefln(dmf(v0, v1, v2, v3, v4));
                 return false;
-            }
         }
 
         return true;
