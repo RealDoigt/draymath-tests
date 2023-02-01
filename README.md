@@ -51,7 +51,7 @@ MatrixFrustum|Pass|
 |QuaternionToEuler|Pass|
 |QuaternionToMatrix|Pass|
 |QuaternionTransform|Pass|
-|Remap|Fail|
+|Remap|Pass|
 |Vector2Add|Pass|
 |Vector2AddValue|Pass|
 |Vector2Angle|Pass*|
