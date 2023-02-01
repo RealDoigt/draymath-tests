@@ -47,22 +47,14 @@ void main()
     tcs["Vector3Zero"] = new TestCaseT!Vector3(&Vector3Zero, &dVector3Zero);
     tcs["Vector3One"] = new TestCaseT!Vector3(&Vector3One, &dVector3One);
     // returns Vector3, 2 Vector3 params
-    tcs["Vector3Add"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Add, cast(Vector3 function(Vector3, Vector3))&dVector3Add);
-    tcs["Vector3Subtract"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Subtract, cast(Vector3 function(Vector3, Vector3))&dVector3Subtract);
-    tcs["Vector3Multiply"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Multiply, cast(Vector3 function(Vector3, Vector3))&dVector3Multiply);
-    tcs["Vector3Divide"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Divide, cast(Vector3 function(Vector3, Vector3))&dVector3Divide);
-    tcs["Vector3Reflect"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Reflect, cast(Vector3 function(Vector3, Vector3))&dVector3Reflect);
-    tcs["Vector3CrossProduct"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3CrossProduct, cast(Vector3 function(Vector3, Vector3))&dVector3CrossProduct);
-    tcs["Vector3Min"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Min, cast(Vector3 function(Vector3, Vector3))&dVector3Min);
-    tcs["Vector3Max"] =
-    new TestCaseTV3V3!Vector3(cast(Vector3 function(Vector3, Vector3))&Vector3Max, cast(Vector3 function(Vector3, Vector3))&dVector3Max);
+    tcs["Vector3Add"] = new TestCaseTV3V3!Vector3(&Vector3Add, &dVector3Add);
+    tcs["Vector3Subtract"] = new TestCaseTV3V3!Vector3(&Vector3Subtract, &dVector3Subtract);
+    tcs["Vector3Multiply"] = new TestCaseTV3V3!Vector3(&Vector3Multiply, &dVector3Multiply);
+    tcs["Vector3Divide"] = new TestCaseTV3V3!Vector3(&Vector3Divide, &dVector3Divide);
+    tcs["Vector3Reflect"] = new TestCaseTV3V3!Vector3(&Vector3Reflect, &dVector3Reflect);
+    tcs["Vector3CrossProduct"] = new TestCaseTV3V3!Vector3(&Vector3CrossProduct, &dVector3CrossProduct);
+    tcs["Vector3Min"] = new TestCaseTV3V3!Vector3(&Vector3Min, &dVector3Min);
+    tcs["Vector3Max"] = new TestCaseTV3V3!Vector3(&Vector3Max, &dVector3Max);
     // return float, 2 Vector3 params
     tcs["Vector3DotProduct"] =
     new TestCaseTV3V3!float(cast(float function(Vector3, Vector3))&Vector3DotProduct, cast(float function(Vector3, Vector3))&dVector3DotProduct);
