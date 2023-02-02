@@ -166,8 +166,7 @@ void main()
     tcs["QuaternionFromVector3ToVector3"] =
     new TestCaseTV3V3!Vector4(cast(Vector4 function(Vector3, Vector3))&QuaternionFromVector3ToVector3, cast(Vector4 function(Vector3, Vector3))&dQuaternionFromVector3ToVector3);
     // returns Vector4, Matrix param
-    tcs["QuaternionFromMatrix"] =
-    new TestCaseTM!Vector4(cast(Vector4 function(Matrix))&QuaternionFromMatrix, cast(Vector4 function(Matrix))&dQuaternionFromMatrix);
+    tcs["QuaternionFromMatrix"] = new TestCaseTM!Vector4(&QuaternionFromMatrix, &dQuaternionFromMatrix);
     // returns Matrix, Vector4 param
     tcs["QuaternionToMatrix"] =
     new TestCaseTV4!Matrix(cast(Matrix function(Vector4))&QuaternionToMatrix, cast(Matrix function(Vector4))&dQuaternionToMatrix);
