@@ -322,9 +322,13 @@ class TestCaseOrthonormalize : TestCase
 
 class TestCaseV3Transform : TestCase
 {
-    private Vector3 function(Vector3, Matrix) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) Vector3 function(Vector3, Matrix) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(Vector3 function(Vector3, Matrix) rmf, Vector3 function(Vector3, Matrix) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
