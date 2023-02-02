@@ -612,13 +612,13 @@ class TestCaseMF : TestCase
 
 class TestCaseMDDDDDD : TestCase
 {
-    private Matrix function(double, double, double, double, double, double) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) Matrix function(double, double, double, double, double, double) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this
-    (
-        Matrix function(double, double, double, double, double, double) rmf,
-        Matrix function(double, double, double, double, double, double) dmf
-    )
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;

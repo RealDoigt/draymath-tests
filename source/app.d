@@ -107,10 +107,8 @@ void main()
     tcs["MatrixRotateXYZ"] = new TestCaseTV3!Matrix(&MatrixRotateXYZ, &dMatrixRotateXYZ);
     tcs["MatrixRotateZYX"] = new TestCaseTV3!Matrix(&MatrixRotateZYX, &dMatrixRotateZYX);
     // returns Matrix, 6 Double params
-    tcs["MatrixFrustum"] =
-    new TestCaseMDDDDDD(cast(Matrix function(double, double, double, double, double, double))&MatrixFrustum, cast(Matrix function(double, double, double, double, double, double))&dMatrixFrustum);
-    tcs["MatrixOrtho"] =
-    new TestCaseMDDDDDD(cast(Matrix function(double, double, double, double, double, double))&MatrixOrtho, cast(Matrix function(double, double, double, double, double, double))&dMatrixOrtho);
+    tcs["MatrixFrustum"] = new TestCaseMDDDDDD(&MatrixFrustum, &dMatrixFrustum);
+    tcs["MatrixOrtho"] = new TestCaseMDDDDDD(&MatrixOrtho, &dMatrixOrtho);
     // returns Matrix, 4 Double params
     tcs["MatrixPerspective"] =
     new TestCaseMPerspective(cast(Matrix function(double, double, double, double))&MatrixPerspective, cast(Matrix function(double, double, double, double))&dMatrixPerspective);
