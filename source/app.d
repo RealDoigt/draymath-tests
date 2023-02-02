@@ -127,10 +127,8 @@ void main()
     // returns float, Vector4 param
     tcs["QuaternionLength"] = new TestCaseTV4!float(&QuaternionLength, &dQuaternionLength);
     // returns Vector4, Vector4 param
-    tcs["QuaternionNormalize"] =
-    new TestCaseTV4!Vector4(cast(Vector4 function(Vector4))&QuaternionNormalize, cast(Vector4 function(Vector4))&dQuaternionNormalize);
-    tcs["QuaternionInvert"] =
-    new TestCaseTV4!Vector4(cast(Vector4 function(Vector4))&QuaternionInvert, cast(Vector4 function(Vector4))&dQuaternionInvert);
+    tcs["QuaternionNormalize"] = new TestCaseTV4!Vector4(&QuaternionNormalize, &dQuaternionNormalize);
+    tcs["QuaternionInvert"] = new TestCaseTV4!Vector4(&QuaternionInvert, &dQuaternionInvert);
     // returns Vector4, 2 Vector4 and 1 float params
     tcs["QuaternionLerp"] =
     new TestCaseV4V4V4F(cast(Vector4 function(Vector4, Vector4, float))&QuaternionLerp, cast(Vector4 function(Vector4, Vector4, float))&dQuaternionLerp);
