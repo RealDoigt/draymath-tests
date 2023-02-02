@@ -98,8 +98,7 @@ void main()
     tcs["MatrixTranslate"] = new TestCaseTFFF!Matrix(&MatrixTranslate, &dMatrixTranslate);
     tcs["MatrixScale"] = new TestCaseTFFF!Matrix(&MatrixScale, &dMatrixScale);
     // returns Matrix, Vector3 and float params
-    tcs["MatrixRotate"] =
-    new TestCaseMRotate(cast(Matrix function(Vector3, float))&MatrixRotate, cast(Matrix function(Vector3, float))&dMatrixRotate);
+    tcs["MatrixRotate"] = new TestCaseMRotate(&MatrixRotate, &dMatrixRotate);
     // returns Matrix, float param
     tcs["MatrixRotateX"] =
     new TestCaseMF(cast(Matrix function(float))&MatrixRotateX, cast(Matrix function(float))&dMatrixRotateX);
