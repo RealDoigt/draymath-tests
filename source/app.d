@@ -28,7 +28,7 @@ void main()
     // return float, 2 Vector2 params
     tcs["Vector2DotProduct"] = new TestCaseTV2V2!float(&Vector2DotProduct, &dVector2DotProduct);
     tcs["Vector2Distance"] = new TestCaseTV2V2!float(&Vector2Distance, &dVector2Distance);
-    tcs["Vector2Angle"] = new TestCaseTV2V2!float(&Vector2Angle, &dVector2Angle);
+    tcs["Vector2Angle"] = new TestCaseV2Angle(&Vector2Angle, &dVector2Angle);
     // returns Vector2, Vector2 and float params
     tcs["Vector2AddValue"] = new TestCaseV2V2F(&Vector2AddValue, &dVector2AddValue);
     tcs["Vector2SubtractValue"] = new TestCaseV2V2F(&Vector2SubtractValue, &dVector2SubtractValue);
