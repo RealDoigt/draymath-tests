@@ -2,7 +2,6 @@
 Note: only the testing code is unlicense. The raylib and draylib stuff have their own licenses.
 Please don't use this code; it's garbage throwaway code.
 # Test results
-Pass* = results are close enough and probably due to float shenanigans
 |Function|Fail/Pass Status|
 |-|-|
 |Clamp|Pass|
@@ -34,7 +33,7 @@ MatrixFrustum|Pass|
 |QuaternionDivide|Pass|
 |QuaternionFromAxisAngle|Pass|
 |QuaternionFromEuler|Pass|
-|QuaternionFromMatrix|Pass*|
+|QuaternionFromMatrix|Pass|
 |QuaternionFromVector3ToVector3|Pass|
 |QuaternionIdentity|Pass|
 |QuaternionInvert|Pass|
@@ -54,7 +53,7 @@ MatrixFrustum|Pass|
 |Remap|Pass|
 |Vector2Add|Pass|
 |Vector2AddValue|Pass|
-|Vector2Angle|Pass*|
+|Vector2Angle|Pass|
 |Vector2Distance|Pass|
 |Vector2Divide|Pass|
 |Vector2DotProduct|Pass|
