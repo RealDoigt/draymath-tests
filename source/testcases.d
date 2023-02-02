@@ -787,9 +787,13 @@ class TestCaseV4V4F : TestCase
 
 class TestCaseTV4(T) : TestCase
 {
-    private T function(Vector4) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) T function(Vector4) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(T function(Vector4) rmf, T function(Vector4) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
