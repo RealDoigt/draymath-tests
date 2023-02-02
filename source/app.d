@@ -119,15 +119,11 @@ void main()
     tcs["QuaternionMultiply"] = new TestCaseTV4V4!Vector4(&QuaternionMultiply, &dQuaternionMultiply);
     tcs["QuaternionDivide"] = new TestCaseTV4V4!Vector4(&QuaternionDivide, &dQuaternionDivide);
     // returns Vector4, Vector4 and float params
-    tcs["QuaternionAddValue"] =
-    new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionAddValue, cast(Vector4 function(Vector4, float))&dQuaternionAddValue);
-    tcs["QuaternionSubtractValue"] =
-    new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionSubtractValue, cast(Vector4 function(Vector4, float))&dQuaternionSubtractValue);
-    tcs["QuaternionScale"] =
-    new TestCaseV4V4F(cast(Vector4 function(Vector4, float))&QuaternionScale, cast(Vector4 function(Vector4, float))&dQuaternionScale);
+    tcs["QuaternionAddValue"] = new TestCaseV4V4F(&QuaternionAddValue, &dQuaternionAddValue);
+    tcs["QuaternionSubtractValue"] = new TestCaseV4V4F(&QuaternionSubtractValue, &dQuaternionSubtractValue);
+    tcs["QuaternionScale"] = new TestCaseV4V4F(&QuaternionScale, &dQuaternionScale);
     // returns Vector4, no param
-    tcs["QuaternionIdentity"] =
-    new TestCaseT!Quaternion(cast(Quaternion function())&QuaternionIdentity, cast(Quaternion function())&dQuaternionIdentity);
+    tcs["QuaternionIdentity"] = new TestCaseT!Vector4(&QuaternionIdentity, &dQuaternionIdentity);
     // returns float, Vector4 param
     tcs["QuaternionLength"] =
     new TestCaseTV4!float(cast(float function(Vector4))&QuaternionLength, cast(float function(Vector4))&dQuaternionLength);
