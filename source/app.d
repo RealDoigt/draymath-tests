@@ -85,12 +85,9 @@ void main()
     tcs["MatrixDeterminant"] = new TestCaseTM!float(&MatrixDeterminant, &dMatrixDeterminant);
     tcs["MatrixTrace"] = new TestCaseTM!float(&MatrixTrace, &dMatrixTrace);
     // returns Matrix, Matrix param
-    tcs["MatrixTranspose"] =
-    new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixTranspose, cast(Matrix function(Matrix))&dMatrixTranspose);
-    tcs["MatrixInvert"] =
-    new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixInvert, cast(Matrix function(Matrix))&dMatrixInvert);
-    tcs["MatrixNormalize"] =
-    new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixNormalize, cast(Matrix function(Matrix))&dMatrixNormalize);
+    tcs["MatrixTranspose"] = new TestCaseTM!Matrix(&MatrixTranspose, &dMatrixTranspose);
+    tcs["MatrixInvert"] = new TestCaseTM!Matrix(&MatrixInvert, &dMatrixInvert);
+    tcs["MatrixNormalize"] = new TestCaseTM!Matrix(&MatrixNormalize, &dMatrixNormalize);
     // returns Matrix, no param
     tcs["MatrixIdentity"] =
     new TestCaseT!Matrix(cast(Matrix function())&MatrixIdentity, cast(Matrix function())&dMatrixIdentity);
