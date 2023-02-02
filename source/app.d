@@ -65,10 +65,8 @@ void main()
     tcs["Vector3SubtractValue"] = new TestCaseV3V3F(&Vector3SubtractValue, &dVector3SubtractValue);
     tcs["Vector3Scale"] = new TestCaseV3V3F(&Vector3Scale, &dVector3Scale);
     // returns float, Vector3 param
-    tcs["Vector3Length"] =
-    new TestCaseTV3!float(cast(float function(Vector3))&Vector3Length, cast(float function(Vector3))&dVector3Length);
-    tcs["Vector3LengthSqr"] =
-    new TestCaseTV3!float(cast(float function(Vector3))&Vector3LengthSqr, cast(float function(Vector3))&dVector3LengthSqr);
+    tcs["Vector3Length"] = new TestCaseTV3!float(&Vector3Length, &dVector3Length);
+    tcs["Vector3LengthSqr"] = new TestCaseTV3!float(&Vector3LengthSqr, &dVector3LengthSqr);
     // returns Vector3, Vector3 param
     tcs["Vector3Perpendicular"] =
     new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Perpendicular, cast(Vector3 function(Vector3))&dVector3Perpendicular);
