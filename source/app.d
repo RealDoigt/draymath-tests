@@ -82,10 +82,8 @@ void main()
     // returns float3, Vector3 param
     tcs["Vector3ToFloatV"] = new TestCaseF3V3(&Vector3ToFloatV, &dVector3ToFloatV);
     // returns float, Matrix param
-    tcs["MatrixDeterminant"] =
-    new TestCaseTM!float(cast(float function(Matrix))&MatrixDeterminant, cast(float function(Matrix))&dMatrixDeterminant);
-    tcs["MatrixTrace"] =
-    new TestCaseTM!float(cast(float function(Matrix))&MatrixTrace, cast(float function(Matrix))&dMatrixTrace);
+    tcs["MatrixDeterminant"] = new TestCaseTM!float(&MatrixDeterminant, &dMatrixDeterminant);
+    tcs["MatrixTrace"] = new TestCaseTM!float(&MatrixTrace, &dMatrixTrace);
     // returns Matrix, Matrix param
     tcs["MatrixTranspose"] =
     new TestCaseTM!Matrix(cast(Matrix function(Matrix))&MatrixTranspose, cast(Matrix function(Matrix))&dMatrixTranspose);

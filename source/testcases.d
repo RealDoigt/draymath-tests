@@ -468,9 +468,13 @@ class TestCaseF3V3 : TestCase
 
 class TestCaseTM(T) : TestCase
 {
-    private T function(Matrix) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) T function(Matrix) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(T function(Matrix) rmf, T function(Matrix) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
