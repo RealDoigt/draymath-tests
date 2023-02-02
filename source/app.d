@@ -130,12 +130,9 @@ void main()
     tcs["QuaternionNormalize"] = new TestCaseTV4!Vector4(&QuaternionNormalize, &dQuaternionNormalize);
     tcs["QuaternionInvert"] = new TestCaseTV4!Vector4(&QuaternionInvert, &dQuaternionInvert);
     // returns Vector4, 2 Vector4 and 1 float params
-    tcs["QuaternionLerp"] =
-    new TestCaseV4V4V4F(cast(Vector4 function(Vector4, Vector4, float))&QuaternionLerp, cast(Vector4 function(Vector4, Vector4, float))&dQuaternionLerp);
-    tcs["QuaternionNlerp"] =
-    new TestCaseV4V4V4F(cast(Vector4 function(Vector4, Vector4, float))&QuaternionNlerp, cast(Vector4 function(Vector4, Vector4, float))&dQuaternionNlerp);
-    tcs["QuaternionSlerp"] =
-    new TestCaseV4V4V4F(cast(Vector4 function(Vector4, Vector4, float))&QuaternionSlerp, cast(Vector4 function(Vector4, Vector4, float))&dQuaternionSlerp);
+    tcs["QuaternionLerp"] = new TestCaseV4V4V4F(&QuaternionLerp, &dQuaternionLerp);
+    tcs["QuaternionNlerp"] = new TestCaseV4V4V4F(&QuaternionNlerp, &dQuaternionNlerp);
+    tcs["QuaternionSlerp"] = new TestCaseV4V4V4F(&QuaternionSlerp, &dQuaternionSlerp);
     // returns Vector4, 2 Vector3 params
     tcs["QuaternionFromVector3ToVector3"] =
     new TestCaseTV3V3!Vector4(cast(Vector4 function(Vector3, Vector3))&QuaternionFromVector3ToVector3, cast(Vector4 function(Vector3, Vector3))&dQuaternionFromVector3ToVector3);
