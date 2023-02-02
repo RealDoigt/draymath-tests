@@ -72,8 +72,7 @@ void main()
     tcs["Vector3Negate"] = new TestCaseTV3!Vector3(&Vector3Negate, &dVector3Negate);
     tcs["Vector3Normalize"] = new TestCaseTV3!Vector3(&Vector3Normalize, &dVector3Normalize);
     // returns nothing, 2 Vector3 pointer params
-    tcs["Vector3OrthoNormalize"] =
-    new TestCaseOrthonormalize(cast(void function(Vector3*, Vector3*))&Vector3OrthoNormalize, cast(void function(Vector3*, Vector3*))&dVector3OrthoNormalize);
+    tcs["Vector3OrthoNormalize"] = new TestCaseOrthonormalize(&Vector3OrthoNormalize, &dVector3OrthoNormalize);
     // returns Vector3, Vector3 and Matrix params
     tcs["Vector3Transform"] =
     new TestCaseV3Transform(cast(Vector3 function(Vector3, Matrix))&Vector3Transform, cast(Vector3 function(Vector3, Matrix))&dVector3Transform);

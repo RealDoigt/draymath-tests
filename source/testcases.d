@@ -290,9 +290,13 @@ class TestCaseTV3(T) : TestCase
 
 class TestCaseOrthonormalize : TestCase
 {
-    private void function(Vector3*, Vector3*) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) void function(Vector3*, Vector3*) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(void function(Vector3*, Vector3*) rmf, void function(Vector3*, Vector3*) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
