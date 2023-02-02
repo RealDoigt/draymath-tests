@@ -392,9 +392,13 @@ class TestCaseV3RotateByQuaternion : TestCase
 
 class TestCaseV3Unproject : TestCase
 {
-    private Vector3 function(Vector3, Matrix, Matrix) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) Vector3 function(Vector3, Matrix, Matrix) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(Vector3 function(Vector3, Matrix, Matrix) rmf, Vector3 function(Vector3, Matrix, Matrix) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
