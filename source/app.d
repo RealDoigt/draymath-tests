@@ -100,12 +100,9 @@ void main()
     // returns Matrix, Vector3 and float params
     tcs["MatrixRotate"] = new TestCaseMRotate(&MatrixRotate, &dMatrixRotate);
     // returns Matrix, float param
-    tcs["MatrixRotateX"] =
-    new TestCaseMF(cast(Matrix function(float))&MatrixRotateX, cast(Matrix function(float))&dMatrixRotateX);
-    tcs["MatrixRotateY"] =
-    new TestCaseMF(cast(Matrix function(float))&MatrixRotateY, cast(Matrix function(float))&dMatrixRotateY);
-    tcs["MatrixRotateZ"] =
-    new TestCaseMF(cast(Matrix function(float))&MatrixRotateZ, cast(Matrix function(float))&dMatrixRotateZ);
+    tcs["MatrixRotateX"] = new TestCaseMF(&MatrixRotateX, &dMatrixRotateX);
+    tcs["MatrixRotateY"] = new TestCaseMF(&MatrixRotateY, &dMatrixRotateY);
+    tcs["MatrixRotateZ"] = new TestCaseMF(&MatrixRotateZ, &dMatrixRotateZ);
     // returns Matrix, Vector3 param
     tcs["MatrixRotateXYZ"] =
     new TestCaseTV3!Matrix(cast(Matrix function(Vector3))&MatrixRotateXYZ, cast(Matrix function(Vector3))&dMatrixRotateXYZ);

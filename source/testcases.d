@@ -586,9 +586,13 @@ class TestCaseMRotate : TestCase
 
 class TestCaseMF : TestCase
 {
-    private Matrix function(float) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) Matrix function(float) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(Matrix function(float) rmf, Matrix function(float) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;
