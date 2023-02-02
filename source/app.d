@@ -146,8 +146,7 @@ void main()
     // returns Vector4, 3 float params
     tcs["QuaternionFromEuler"] = new TestCaseTFFF!Vector4(&QuaternionFromEuler, &dQuaternionFromEuler);
     // returns Vector3, Vector4 param
-    tcs["QuaternionToEuler"] =
-    new TestCaseTV4!Vector3(cast(Vector3 function(Vector4))&QuaternionToEuler, cast(Vector3 function(Vector4))&dQuaternionToEuler);
+    tcs["QuaternionToEuler"] = new TestCaseTV4!Vector3(&QuaternionToEuler, &dQuaternionToEuler);
     // returns Vector4, Vector4 and Matrix params
     tcs["QuaternionTransform"] =
     new TestCaseV4Transform(cast(Vector4 function(Vector4, Matrix))&QuaternionTransform, cast(Vector4 function(Vector4, Matrix))&dQuaternionTransform);
