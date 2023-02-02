@@ -80,8 +80,7 @@ void main()
     // returns Vector3, Vector3 and 2 Matrix params
     tcs["Vector3Unproject"] = new TestCaseV3Unproject(&Vector3Unproject, &dVector3Unproject);
     // returns float3, Vector3 param
-    tcs["Vector3ToFloatV"] =
-    new TestCaseF3V3(cast(float3 function(Vector3))&Vector3ToFloatV, cast(float3 function(Vector3))&dVector3ToFloatV);
+    tcs["Vector3ToFloatV"] = new TestCaseF3V3(&Vector3ToFloatV, &dVector3ToFloatV);
     // returns float, Matrix param
     tcs["MatrixDeterminant"] =
     new TestCaseTM!float(cast(float function(Matrix))&MatrixDeterminant, cast(float function(Matrix))&dMatrixDeterminant);
