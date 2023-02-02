@@ -674,9 +674,13 @@ class TestCaseMPerspective : TestCase
 
 class TestCaseMToFloatV : TestCase
 {
-    private float16 function(Matrix) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) float16 function(Matrix) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(float16 function(Matrix) rmf, float16 function(Matrix) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;

@@ -112,8 +112,7 @@ void main()
     // returns Matrix, 4 Double params
     tcs["MatrixPerspective"] = new TestCaseMPerspective(&MatrixPerspective, &dMatrixPerspective);
     // returns float16, Matrix param
-    tcs["MatrixToFloatV"] =
-    new TestCaseMToFloatV(cast(float16 function(Matrix))&MatrixToFloatV, cast(float16 function(Matrix))&dMatrixToFloatV);
+    tcs["MatrixToFloatV"] = new TestCaseMToFloatV(&MatrixToFloatV, &dMatrixToFloatV);
     // returns Vector4, 2 Vector4 params
     tcs["QuaternionAdd"] =
     new TestCaseTV4V4!Vector4(cast(Vector4 function(Vector4, Vector4))&QuaternionAdd, cast(Vector4 function(Vector4, Vector4))&dQuaternionAdd);
