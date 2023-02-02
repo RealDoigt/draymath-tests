@@ -68,12 +68,9 @@ void main()
     tcs["Vector3Length"] = new TestCaseTV3!float(&Vector3Length, &dVector3Length);
     tcs["Vector3LengthSqr"] = new TestCaseTV3!float(&Vector3LengthSqr, &dVector3LengthSqr);
     // returns Vector3, Vector3 param
-    tcs["Vector3Perpendicular"] =
-    new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Perpendicular, cast(Vector3 function(Vector3))&dVector3Perpendicular);
-    tcs["Vector3Negate"] =
-    new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Negate, cast(Vector3 function(Vector3))&dVector3Negate);
-    tcs["Vector3Normalize"] =
-    new TestCaseTV3!Vector3(cast(Vector3 function(Vector3))&Vector3Normalize, cast(Vector3 function(Vector3))&dVector3Normalize);
+    tcs["Vector3Perpendicular"] = new TestCaseTV3!Vector3(&Vector3Perpendicular, &dVector3Perpendicular);
+    tcs["Vector3Negate"] = new TestCaseTV3!Vector3(&Vector3Negate, &dVector3Negate);
+    tcs["Vector3Normalize"] = new TestCaseTV3!Vector3(&Vector3Normalize, &dVector3Normalize);
     // returns nothing, 2 Vector3 pointer params
     tcs["Vector3OrthoNormalize"] =
     new TestCaseOrthonormalize(cast(void function(Vector3*, Vector3*))&Vector3OrthoNormalize, cast(void function(Vector3*, Vector3*))&dVector3OrthoNormalize);
