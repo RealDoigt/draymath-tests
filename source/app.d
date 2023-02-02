@@ -76,8 +76,7 @@ void main()
     // returns Vector3, Vector3 and Matrix params
     tcs["Vector3Transform"] = new TestCaseV3Transform(&Vector3Transform, &dVector3Transform);
     // returns Vector3, Vector3 and Vector4 params
-    tcs["Vector3RotateByQuaternion"] =
-    new TestCaseV3RotateByQuaternion(cast(Vector3 function(Vector3, Vector4))&Vector3RotateByQuaternion, cast(Vector3 function(Vector3, Vector4))&dVector3RotateByQuaternion);
+    tcs["Vector3RotateByQuaternion"] = new TestCaseV3RotateByQuaternion(&Vector3RotateByQuaternion, &dVector3RotateByQuaternion);
     // returns Vector3, Vector3 and 2 Matrix params
     tcs["Vector3Unproject"] =
     new TestCaseV3Unproject(cast(Vector3 function(Vector3, Matrix, Matrix))&Vector3Unproject, cast(Vector3 function(Vector3, Matrix, Matrix))&dVector3Unproject);
