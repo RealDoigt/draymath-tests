@@ -91,12 +91,9 @@ void main()
     // returns Matrix, no param
     tcs["MatrixIdentity"] = new TestCaseT!Matrix(&MatrixIdentity, &dMatrixIdentity);
     // returns Matrix, 2 Matrix params
-    tcs["MatrixAdd"] =
-    new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixAdd, cast(Matrix function(Matrix, Matrix))&dMatrixAdd);
-    tcs["MatrixSubtract"] =
-    new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixSubtract, cast(Matrix function(Matrix, Matrix))&dMatrixSubtract);
-    tcs["MatrixMultiply"] =
-    new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixMultiply, cast(Matrix function(Matrix, Matrix))&dMatrixMultiply);
+    tcs["MatrixAdd"] = new TestCaseMMM(&MatrixAdd, &dMatrixAdd);
+    tcs["MatrixSubtract"] = new TestCaseMMM(&MatrixSubtract, &dMatrixSubtract);
+    tcs["MatrixMultiply"] = new TestCaseMMM(&MatrixMultiply, &dMatrixMultiply);
     // returns Matrix, 3 float params
     tcs["MatrixTranslate"] =
     new TestCaseTFFF!Matrix(cast(Matrix function(float, float, float))&MatrixTranslate, cast(Matrix function(float, float, float))&dMatrixTranslate);
