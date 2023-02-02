@@ -89,8 +89,7 @@ void main()
     tcs["MatrixInvert"] = new TestCaseTM!Matrix(&MatrixInvert, &dMatrixInvert);
     tcs["MatrixNormalize"] = new TestCaseTM!Matrix(&MatrixNormalize, &dMatrixNormalize);
     // returns Matrix, no param
-    tcs["MatrixIdentity"] =
-    new TestCaseT!Matrix(cast(Matrix function())&MatrixIdentity, cast(Matrix function())&dMatrixIdentity);
+    tcs["MatrixIdentity"] = new TestCaseT!Matrix(&MatrixIdentity, &dMatrixIdentity);
     // returns Matrix, 2 Matrix params
     tcs["MatrixAdd"] =
     new TestCaseMMM(cast(Matrix function(Matrix, Matrix))&MatrixAdd, cast(Matrix function(Matrix, Matrix))&dMatrixAdd);
