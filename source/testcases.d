@@ -889,9 +889,13 @@ class TestCaseV4FromAxisAngle : TestCase
 
 class TestCaseV4ToAxisAngle : TestCase
 {
-    private void function(Vector4, Vector3*, float*) rmf, dmf;
+    private
+    {
+        alias RMF = extern(C) void function(Vector4, Vector3*, float*) @nogc nothrow;
+        RMF rmf, dmf;
+    }
 
-    this(void function(Vector4, Vector3*, float*) rmf, void function(Vector4, Vector3*, float*) dmf)
+    this(RMF rmf, RMF dmf)
     {
         this.rmf = rmf;
         this.dmf = dmf;

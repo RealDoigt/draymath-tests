@@ -142,8 +142,7 @@ void main()
     // returns Vector4, Vector3 and float params
     tcs["QuaternionFromAxisAngle"] = new TestCaseV4FromAxisAngle(&QuaternionFromAxisAngle, &dQuaternionFromAxisAngle);
     // returns nothing; Vector4, Vector3 pointer and float pointer params
-    tcs["QuaternionToAxisAngle"] =
-    new TestCaseV4ToAxisAngle(cast(void function(Vector4, Vector3*, float*))&QuaternionToAxisAngle, cast(void function(Vector4, Vector3*, float*))&dQuaternionToAxisAngle);
+    tcs["QuaternionToAxisAngle"] = new TestCaseV4ToAxisAngle(&QuaternionToAxisAngle, &dQuaternionToAxisAngle);
     // returns Vector4, 3 float params
     tcs["QuaternionFromEuler"] =
     new TestCaseTFFF!Vector4(cast(Vector4 function(float, float, float))&QuaternionFromEuler, cast(Vector4 function(float, float, float))&dQuaternionFromEuler);
