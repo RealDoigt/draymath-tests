@@ -148,8 +148,7 @@ void main()
     // returns Vector3, Vector4 param
     tcs["QuaternionToEuler"] = new TestCaseTV4!Vector3(&QuaternionToEuler, &dQuaternionToEuler);
     // returns Vector4, Vector4 and Matrix params
-    tcs["QuaternionTransform"] =
-    new TestCaseV4Transform(cast(Vector4 function(Vector4, Matrix))&QuaternionTransform, cast(Vector4 function(Vector4, Matrix))&dQuaternionTransform);
+    tcs["QuaternionTransform"] = new TestCaseV4Transform(&QuaternionTransform, &dQuaternionTransform);
     // END Function Test Cases
 
     foreach (key; tcs.keys.sort!((a, b) => a < b))
